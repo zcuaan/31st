@@ -1,6 +1,6 @@
-# Lord Oliver Blackwood
+# Lord Olivier Blackwood
 ## Cornerstone Investor & Shadow Chairman of Vantage House Capital
-### Played by: Oli
+### Played by: Olivier
 
 **Character vibe:** powerful, enigmatic  
 **Role size:** High  
@@ -11,7 +11,7 @@
 
 ## WHO YOU ARE
 
-You are Lord Oliver Blackwood.
+You are Lord Olivier Blackwood.
 
 You do not run companies.
 
