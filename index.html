@@ -39,6 +39,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
         }
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 600; margin-bottom: 0.5em; }
@@ -46,18 +47,55 @@
         a { color: var(--text-main); text-decoration: none; transition: color 0.2s ease; }
         ul { list-style-position: inside; margin-bottom: 1rem; }
 
-        /* Banner */
+        /* Banners */
+        #live-announcement-banner {
+            display: none;
+            background-color: var(--accent-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        #live-announcement-banner.active { display: flex; }
+        
+        .announcement-text {
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .copy-btn {
+            background-color: var(--white);
+            color: var(--accent-navy);
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            min-width: 120px;
+            text-align: center;
+        }
+        .copy-btn:active { background-color: #E0E0E0; }
+
         #crisis-banner {
             display: none;
             background-color: var(--accent-burgundy);
             color: var(--bg-color);
             text-align: center;
-            padding: 8px 16px;
+            padding: 10px 16px;
             font-size: 0.85rem;
             font-weight: 500;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            cursor: pointer;
         }
         #crisis-banner.active { display: block; }
 
@@ -95,6 +133,7 @@
             letter-spacing: 0.05em;
             color: var(--text-muted);
             font-weight: 500;
+            padding: 8px 0;
         }
         .nav-links a:hover, .nav-links a.active {
             color: var(--text-main);
@@ -106,6 +145,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-main);
+            padding: 8px;
         }
 
         /* Mobile Nav */
@@ -122,7 +162,7 @@
                 border-bottom: 1px solid var(--border-color);
                 box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             }
-            .nav-links.show { display: flex; }
+            .nav-links.show { display: flex; gap: 16px; }
             .mobile-menu-btn { display: block; }
         }
 
@@ -234,21 +274,15 @@
             margin-bottom: 24px;
             flex-wrap: wrap;
         }
-        .filter-input {
-            padding: 8px 12px;
+        .filter-input, .filter-select {
+            padding: 12px 16px;
             border: 1px solid var(--border-color);
             background: var(--white);
             font-family: var(--font-sans);
-            font-size: 0.9rem;
-            min-width: 250px;
+            font-size: 1rem;
         }
-        .filter-select {
-            padding: 8px 12px;
-            border: 1px solid var(--border-color);
-            background: var(--white);
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-        }
+        .filter-input { min-width: 250px; flex-grow: 1; max-width: 400px; }
+        
         .evidence-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -265,31 +299,28 @@
         }
         .evidence-id {
             font-family: var(--font-mono);
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: var(--accent-navy);
             background-color: var(--panel-grey);
-            padding: 4px 8px;
+            padding: 6px 10px;
             display: inline-block;
         }
         .evidence-main h3 { font-family: var(--font-sans); font-size: 1.1rem; margin-bottom: 8px; }
         .evidence-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
         .tag {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             background-color: var(--panel-grey);
-            padding: 2px 6px;
+            padding: 4px 8px;
             color: var(--text-muted);
             border: 1px solid var(--border-color);
         }
         .evidence-meta { text-align: right; font-size: 0.85rem; color: var(--text-muted); }
         
         @media (max-width: 768px) {
-            .evidence-card {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+            .evidence-card { grid-template-columns: 1fr; gap: 16px; }
             .evidence-meta { text-align: left; }
         }
 
@@ -306,7 +337,7 @@
             background-color: var(--accent-navy);
             border-radius: 50%;
         }
-        .event-time { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+        .event-time { font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 4px; }
         .event-title { font-size: 1.2rem; margin-bottom: 8px; }
 
         /* Succession */
@@ -329,7 +360,7 @@
         }
         .voting-weights {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 16px;
             margin-top: 24px;
         }
@@ -342,14 +373,15 @@
         .weight-num { font-family: var(--font-serif); font-size: 2rem; color: var(--accent-burgundy); }
         .budget-note {
             margin-top: 24px;
-            padding: 16px;
+            padding: 20px;
             border: 1px dashed var(--accent-navy);
             background-color: #f8fcfdbb;
             font-weight: 500;
         }
 
         /* Static Layouts */
-        .rules-list li { margin-bottom: 8px; }
+        .rules-list { margin-left: 8px; }
+        .rules-list li { margin-bottom: 12px; }
         .pricing-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
         .pricing-table th, .pricing-table td {
             padding: 16px;
@@ -358,6 +390,16 @@
         }
         .pricing-table th { font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); }
         .price-val { font-family: var(--font-mono); font-weight: 500; }
+        
+        @media (max-width: 768px) {
+            .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table th, .pricing-table td {
+                display: block; width: 100%;
+            }
+            .pricing-table tr { margin-bottom: 16px; border: 1px solid var(--border-color); }
+            .pricing-table td { border-bottom: none; padding: 12px 16px; }
+            .pricing-table th { display: none; }
+            .pricing-table td:first-child { font-weight: 600; background: var(--panel-grey); }
+        }
 
         /* Footer */
         footer {
@@ -378,7 +420,24 @@
     To release new information during the game, add only the newly public record 
     to this object and redeploy/update the file. 
     NEVER pre-load future clues, future events, or hidden secrets here. 
-    If it is not public in the game, it must not exist in this file.
+    
+    Data Shapes for Host:
+    
+    Announcement shape:
+    announcement: { text: "", target: "forensics", whatsappText: "" }
+    
+    Evidence shape:
+    { id:"", title:"", tags:[], status:"RELEASED", time:"", summary:"" }
+    
+    Forensic bulletin shape:
+    { time:"", title:"", wording:"", evidenceIds:[] }
+    
+    Succession candidate shape:
+    { name:"", depositPaid:true, signaturesConfirmed:true }
+    
+    Public event shape:
+    { time:"", event:"" }
+    ==========================================
     -->
     <script>
         const publicState = {
@@ -393,12 +452,17 @@
         };
     </script>
 
-    <div id="crisis-banner" onclick="window.location.hash='#forensics'"></div>
+    <div id="live-announcement-banner">
+        <span class="announcement-text" onclick="navigateFromAnnouncement()"></span>
+        <button class="copy-btn" onclick="copyAnnouncement(event)">Copy Update</button>
+    </div>
+    
+    <div id="crisis-banner">EXECUTIVE INCIDENT — INTERNAL INVESTIGATION ACTIVE</div>
 
     <header>
         <div class="nav-container">
             <a href="#home" class="logo">Vantage House</a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             <nav class="nav-links" id="nav-links">
                 <a href="#home">Home</a>
                 <a href="#people">People</a>
@@ -457,7 +521,7 @@
                 <!-- Dynamically populated -->
             </div>
             
-            <div style="margin-top: 40px; padding: 20px; background: var(--panel-grey); font-size: 0.9rem;">
+            <div style="margin-top: 40px; padding: 24px; background: var(--panel-grey); font-size: 0.95rem; line-height: 1.6;">
                 <strong>Note on Evidence Registration:</strong> Portable evidence may be officially registered. Once registered, the public record permanently confirms the Evidence ID, basic identity/title, and registration time. The physical object may subsequently be traded, hidden, or stolen, but its discovery cannot be erased from this register.
             </div>
         </section>
@@ -484,13 +548,13 @@
             <div style="margin-top: 40px;">
                 <h3>Succession Governance Rules</h3>
                 <ul class="rules-list">
-                    <li><strong>Nomination Deposit:</strong> £200,000 corporate processing fee.</li>
+                    <li><strong>Nomination Deposit:</strong> £200,000 non-refundable nomination deposit. The deposit is paid into the Vantage treasury and is not returned if the candidate loses or withdraws. This is not personal income for another player.</li>
                     <li><strong>Signatures:</strong> Candidates require signatures from two voting shareholders to appear on the ballot.</li>
                     <li><strong>Restriction:</strong> Candidates cannot nominate themselves. A nomination signature does not bind the voter to a final vote.</li>
                     <li><strong>Majority Required:</strong> 5 votes.</li>
                     <li><strong>Blocs:</strong> Olivier’s 3 votes and Jane’s 2 votes are indivisible blocs.</li>
                     <li><strong>Runoff Procedure:</strong> If no candidate receives 5 votes, the top two proceed to a runoff. If tied for second, all tied candidates proceed. The lowest-scoring candidate is eliminated sequentially until a majority is reached.</li>
-                    <li><strong>Conduct:</strong> Deals and bribes are strictly outside official governance. Votes are secret. Private deals are not enforceable. Suspicion or accusation of misconduct does not remove candidacy or voting rights.</li>
+                    <li><strong>Conduct:</strong> Suspicion or accusation of misconduct does not remove candidacy or voting rights.</li>
                 </ul>
 
                 <h4 style="margin-top: 24px;">Public Vote Weights</h4>
@@ -584,6 +648,7 @@
                 <h3>Game Mechanics Clarifications</h3>
                 <ul class="rules-list">
                     <li><strong>Evidence Canon:</strong> Official evidence published on this site is canonically genuine. However, players are completely free to claim that it is AI-generated, planted, manipulated, politically motivated, institutional propaganda, or taken out of context.</li>
+                    <li><strong>Private Arrangements:</strong> Vantage House Group does not recognise, record or enforce private promises, side agreements, financial consideration or other inducements made between participants. Votes remain secret. Private deals are not enforceable.</li>
                     <li><strong>Abilities:</strong> Character abilities cannot be transferred or sold. Information obtained through them may be traded.</li>
                     <li><strong>Timing:</strong> Real arrival time is outside the fiction. A late player’s canonical earlier actions still occurred.</li>
                 </ul>
@@ -617,11 +682,11 @@
             { name: "Josh", role: "Group Strategy Director", group: "Core Vantage Functions", desc: "Leads long-term corporate strategy and major acquisitions." },
             { name: "Ope", role: "Operations & Special Projects", group: "Core Vantage Functions", desc: "Handles internal operational logistics and cross-departmental projects." },
             { name: "Phil", role: "Chief Information Security Officer", group: "Core Vantage Functions", desc: "Manages digital security, infrastructure protection, and data compliance." },
-            { name: "John", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs the mathematical models and trading systems architecture." },
+            { name: "John", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs quantitative models and systems architecture across Vantage." },
             { name: "Lento", role: "Risk Modelling", group: "Core Vantage Functions", desc: "Analyzes quantitative risk and market exposure." },
-            { name: "Naomi", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "In-house legal counsel specializing in mergers and acquisitions." },
+            { name: "Naomi", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "Advises on major transactions, deal structure and corporate legal risk." },
             { name: "Chris", role: "Internal Audit", group: "Core Vantage Functions", desc: "Ensures internal financial controls and policy adherence." },
-            { name: "Olu", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Directs human resources and corporate culture." },
+            { name: "Olu", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Works on organisational design, workforce strategy and the employee impact of corporate decisions." },
             { name: "James", role: "Helix Due-Diligence Associate", group: "Core Vantage Functions", desc: "Junior associate embedded on the upcoming Helix transaction." },
 
             { name: "Olivier", role: "Cornerstone Investor", group: "Board / Shareholders / Capital", desc: "Major institutional shareholder with significant board influence." },
@@ -629,12 +694,12 @@
             { name: "Andree", role: "Family Office / Shareholder", group: "Board / Shareholders / Capital", desc: "Manages private family wealth invested in Vantage." },
             { name: "Jane", role: "Legacy Shareholder", group: "Board / Shareholders / Capital", desc: "Long-standing stakeholder with deep institutional ties." },
 
-            { name: "Sara", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Manages political relationships and regulatory lobbying." },
+            { name: "Sara", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Works across government affairs, policy relationships and external political engagement." },
             { name: "Jennifer", role: "Activist Short-Seller & Investigator", group: "External Advisers & Market Participants", desc: "External market participant known for aggressive institutional investigations." },
-            { name: "Adam", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "External consultant for critical PR and political crisis management." },
+            { name: "Adam", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "Advises on crisis communications, media strategy and Westminster-facing issues." },
             { name: "Yu", role: "Hedge Fund Investor", group: "External Advisers & Market Participants", desc: "External institutional investor monitoring the firm's market position." },
             { name: "Vanessa", role: "Corporate Intelligence Adviser", group: "External Advisers & Market Participants", desc: "Provides discreet corporate intelligence and private advisory." },
-            { name: "Rhiannon", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "External market analyst covering the financial sector." },
+            { name: "Rhiannon", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "Conducts public-source, market and company research supporting Vantage analysis." },
             { name: "Ricardo", role: "Crypto Founder / Venture Capitalist", group: "External Advisers & Market Participants", desc: "Technology entrepreneur with intersecting financial interests." }
         ];
 
@@ -646,12 +711,13 @@
         // Router
         function router() {
             const hash = window.location.hash || '#home';
+            const hashId = hash.substring(1) || 'home';
             
             // Hide all sections
             document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
             
-            // Show target section
-            const target = document.querySelector(hash);
+            // Show target section (safely lookup by ID to prevent querySelector injection issues)
+            const target = document.getElementById(hashId);
             if (target) {
                 target.classList.add('active');
             } else {
@@ -660,7 +726,7 @@
 
             // Update nav links active state
             document.querySelectorAll('.nav-links a').forEach(link => {
-                if (link.getAttribute('href') === hash) {
+                if (link.getAttribute('href') === '#' + hashId || (hashId === 'home' && link.getAttribute('href') === '#home')) {
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
@@ -671,15 +737,67 @@
             document.getElementById('nav-links').classList.remove('show');
         }
 
+        // Live Announcement Navigation
+        function navigateFromAnnouncement() {
+            if (publicState.announcement && publicState.announcement.target) {
+                window.location.hash = '#' + publicState.announcement.target;
+            }
+        }
+
+        // WhatsApp Copy Handler
+        function copyAnnouncement(e) {
+            e.stopPropagation(); // Prevent triggering the banner's navigation
+            if (!publicState.announcement) return;
+            
+            const textToCopy = publicState.announcement.whatsappText || publicState.announcement.text;
+            if (!textToCopy) return;
+
+            // Fallback for older browsers if needed, but modern standard is clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(() => showCopiedFeedback(e.target));
+            } else {
+                // Legacy fallback
+                let textArea = document.createElement("textarea");
+                textArea.value = textToCopy;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                textArea.style.top = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopiedFeedback(e.target);
+                } catch (err) {
+                    console.error('Fallback copy failed', err);
+                }
+                textArea.remove();
+            }
+        }
+
+        function showCopiedFeedback(btn) {
+            const originalText = btn.textContent;
+            btn.textContent = "COPIED";
+            setTimeout(() => { btn.textContent = originalText; }, 1500);
+        }
+
         // Render Functions
         function renderApp() {
-            // Banner
-            const banner = document.getElementById('crisis-banner');
-            if (publicState.incidentActive || publicState.announcement) {
-                banner.textContent = publicState.announcement || "EXECUTIVE INCIDENT — INTERNAL INVESTIGATION ACTIVE";
-                banner.classList.add('active');
+            // Live Update Strip
+            const liveBanner = document.getElementById('live-announcement-banner');
+            if (publicState.announcement) {
+                liveBanner.querySelector('.announcement-text').textContent = publicState.announcement.text;
+                liveBanner.classList.add('active');
             } else {
-                banner.classList.remove('active');
+                liveBanner.classList.remove('active');
+            }
+
+            // Crisis Strip
+            const crisisBanner = document.getElementById('crisis-banner');
+            if (publicState.incidentActive) {
+                crisisBanner.classList.add('active');
+            } else {
+                crisisBanner.classList.remove('active');
             }
 
             // People
@@ -714,7 +832,7 @@
             // Forensics
             const forensicsContainer = document.getElementById('forensics-container');
             if (publicState.forensics.length === 0) {
-                forensicsContainer.innerHTML = "<p>No official findings released at this time.</p>";
+                forensicsContainer.innerHTML = "<p>No forensic bulletins have been issued.</p>";
             } else {
                 forensicsContainer.innerHTML = publicState.forensics.map(f => `
                     <div class="timeline-event">
@@ -746,7 +864,12 @@
                     ${publicState.candidates.length > 0 ? `
                         <h3>Official Candidates</h3>
                         <ul class="rules-list" style="margin-bottom: 24px;">
-                            ${publicState.candidates.map(c => `<li><strong>${c}</strong></li>`).join('')}
+                            ${publicState.candidates.map(c => `
+                                <li style="margin-bottom: 12px;">
+                                    <strong>${c.name}</strong>
+                                    ${c.signaturesConfirmed ? `<span class="metadata-label" style="margin-left: 8px; background: var(--panel-grey); padding: 4px 8px; display: inline-block;">Nomination Confirmed</span>` : ''}
+                                </li>
+                            `).join('')}
                         </ul>
                     ` : '<p style="margin-bottom: 24px;"><em>No candidates formally registered yet.</em></p>'}
                 `;
@@ -755,11 +878,11 @@
                     <div class="succession-status" style="background-color: var(--accent-navy); color: var(--white); border:none;">
                         <div class="status-badge" style="background-color: var(--white); color: var(--accent-navy);">RESOLVED</div>
                         <h2 style="color: var(--white); margin-top: 12px;">INTERIM CEO APPOINTED</h2>
-                        <p style="font-family: var(--font-serif); font-size: 2rem; margin: 16px 0;">${publicState.interimCEO || "TBC"}</p>
+                        <p style="font-family: var(--font-serif); font-size: 2.2rem; margin: 16px 0;">${publicState.interimCEO || "TBC"}</p>
                     </div>
                     <div class="budget-note">
-                        <strong>Governance Note:</strong> Interim CEO discretionary budget authorized: £300,000. <br>
-                        <span style="font-size: 0.85rem; color: var(--text-muted);">This constitutes Vantage corporate funds, not personal capital, and is excluded from personal asset calculations.</span>
+                        <strong>Governance Note:</strong> £300,000 Interim CEO discretionary Vantage budget authorized. <br>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-top: 8px;">Corporate budget. Not personal cash. Excluded from Wolf of Vantage calculations.</span>
                     </div>
                 `;
             }
@@ -767,7 +890,7 @@
             // Missed / Briefing
             const missedContainer = document.getElementById('missed-container');
             if (publicState.publicEvents.length === 0) {
-                missedContainer.innerHTML = "<p>No incidents on record.</p>";
+                missedContainer.innerHTML = "<p>No public incident updates have been recorded.</p>";
             } else {
                 missedContainer.innerHTML = publicState.publicEvents.map(e => `
                     <div class="timeline-event">
@@ -784,16 +907,25 @@
             const tagFilter = document.getElementById('evidence-tag').value;
             const container = document.getElementById('evidence-container');
             
-            // Only render items that exist in publicState
+            const validStatuses = ["RELEASED", "REGISTERED"];
+
+            // Only render valid items that exist in publicState
             const visibleEvidence = publicState.evidence.filter(item => {
-                // In this architecture, we don't use WITHHELD. If it's in publicState, it is shown.
+                if (!item.status || !validStatuses.includes(item.status)) return false;
+                
                 const matchesSearch = item.id.toLowerCase().includes(searchTerm) || item.title.toLowerCase().includes(searchTerm);
                 const matchesTag = tagFilter === "ALL" || (item.tags && item.tags.includes(tagFilter));
                 return matchesSearch && matchesTag;
             });
 
             if (visibleEvidence.length === 0) {
-                container.innerHTML = "<p>No matching evidence records found.</p>";
+                // If there are truly 0 items in the state, show the empty state message.
+                // Otherwise show search not found.
+                if (publicState.evidence.length === 0) {
+                    container.innerHTML = "<p>No evidence records have been released.</p>";
+                } else {
+                    container.innerHTML = "<p>No matching evidence records found.</p>";
+                }
                 return;
             }
 
@@ -805,10 +937,10 @@
                         <div class="evidence-tags">
                             ${item.tags ? item.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
                         </div>
-                        <p style="font-size: 0.9rem;">${item.summary}</p>
+                        <p style="font-size: 0.95rem;">${item.summary}</p>
                     </div>
                     <div class="evidence-meta">
-                        <div class="metadata-label">${item.status || "REGISTERED"}</div>
+                        <div class="metadata-label">${item.status}</div>
                         <div style="margin-top: 4px;">${item.time}</div>
                     </div>
                 </div>
