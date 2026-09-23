@@ -1,1 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vantage House Group</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            /* Restrained Palette */
+            --bg-color: #FAF9F6; /* Warm off-white / ivory */
+            --text-main: #1A1A1A; /* Charcoal */
+            --text-muted: #4A4A4A;
+            --accent-burgundy: #591C21; /* Oxblood / Deep Burgundy */
+            --accent-navy: #1B263B; /* Muted Navy */
+            --panel-grey: #F0EFEA;
+            --border-color: #DCD9D0;
+            --white: #FFFFFF;
+
+            /* Typography */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+
+            /* Spacing & Layout */
+            --nav-height: 70px;
+            --content-max-width: 1100px;
+        }
+
+        /* Reset & Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 600; margin-bottom: 0.5em; }
+        p { margin-bottom: 1rem; }
+        a { color: var(--text-main); text-decoration: none; transition: color 0.2s ease; }
+        ul { list-style-position: inside; margin-bottom: 1rem; }
+
+        /* Banner */
+        #crisis-banner {
+            display: none;
+            background-color: var(--accent-burgundy);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        #crisis-banner.active { display: block; }
+
+        /* Navigation */
+        header {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: var(--nav-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-links a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Mobile Nav */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                padding: 16px 24px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            }
+            .nav-links.show { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 60px 24px;
+            min-height: calc(100vh - var(--nav-height) - 100px);
+        }
+        .section { display: none; animation: fadeIn 0.3s ease; }
+        .section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography Hierarchy & UI Elements */
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .page-subtitle {
+            font-family: var(--font-sans);
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Hero */
+        .hero-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+        }
+        .hero-copy {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+        }
+        .quote-block {
+            background-color: var(--panel-grey);
+            padding: 40px;
+            border-left: 2px solid var(--accent-navy);
+            text-align: left;
+        }
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+        .quote-author {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Org Chart / People */
+        .org-group { margin-bottom: 3rem; }
+        .org-group-title {
+            font-size: 1.2rem;
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-navy);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+        }
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .person-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            transition: border-color 0.2s;
+        }
+        .person-card:hover { border-color: var(--accent-navy); }
+        .person-name { font-size: 1.5rem; margin-bottom: 4px; }
+        .person-role { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); margin-bottom: 16px; }
+        .person-desc { font-size: 0.9rem; line-height: 1.5; }
+
+        /* Evidence & Tables */
+        .filters {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .filter-input {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            min-width: 250px;
+        }
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+        }
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .evidence-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 120px 1fr 150px;
+            gap: 24px;
+            align-items: start;
+        }
+        .evidence-id {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-navy);
+            background-color: var(--panel-grey);
+            padding: 4px 8px;
+            display: inline-block;
+        }
+        .evidence-main h3 { font-family: var(--font-sans); font-size: 1.1rem; margin-bottom: 8px; }
+        .evidence-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+        .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background-color: var(--panel-grey);
+            padding: 2px 6px;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+        .evidence-meta { text-align: right; font-size: 0.85rem; color: var(--text-muted); }
+        
+        @media (max-width: 768px) {
+            .evidence-card {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .evidence-meta { text-align: left; }
+        }
+
+        /* Forensic / Updates Feed */
+        .timeline { border-left: 2px solid var(--border-color); margin-left: 12px; padding-left: 24px; }
+        .timeline-event { position: relative; margin-bottom: 32px; }
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-navy);
+            border-radius: 50%;
+        }
+        .event-time { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+        .event-title { font-size: 1.2rem; margin-bottom: 8px; }
+
+        /* Succession */
+        .succession-status {
+            background-color: var(--panel-grey);
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .status-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 12px;
+            background-color: var(--accent-navy);
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .voting-weights {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .weight-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            text-align: center;
+        }
+        .weight-num { font-family: var(--font-serif); font-size: 2rem; color: var(--accent-burgundy); }
+        .budget-note {
+            margin-top: 24px;
+            padding: 16px;
+            border: 1px dashed var(--accent-navy);
+            background-color: #f8fcfdbb;
+            font-weight: 500;
+        }
+
+        /* Static Layouts */
+        .rules-list li { margin-bottom: 8px; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+        .pricing-table th, .pricing-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .pricing-table th { font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); }
+        .price-val { font-family: var(--font-mono); font-weight: 500; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+    ==========================================
+    HOST CONFIGURATION - PUBLIC GAME STATE
+    ==========================================
+    To release new information during the game, add only the newly public record 
+    to this object and redeploy/update the file. 
+    NEVER pre-load future clues, future events, or hidden secrets here. 
+    If it is not public in the game, it must not exist in this file.
+    -->
+    <script>
+        const publicState = {
+            incidentActive: false,
+            announcement: null,
+            successionState: "closed", // Valid states: "closed", "open", "resolved"
+            interimCEO: null,
+            candidates: [], 
+            evidence: [], 
+            forensics: [], 
+            publicEvents: []
+        };
+    </script>
+
+    <div id="crisis-banner" onclick="window.location.hash='#forensics'"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">Vantage House</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#people">People</a>
+                <a href="#evidence">Evidence</a>
+                <a href="#forensics">Forensics</a>
+                <a href="#succession">Succession</a>
+                <a href="#investigations">Investigations</a>
+                <a href="#rules">Rules</a>
+                <a href="#missed">Briefing</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <div class="hero-container">
+                <h1 class="hero-title">Vantage House Group</h1>
+                <p class="hero-copy">A premier London-headquartered banking and financial-services group. Combining exceptional strategy, discreet wealth management, and responsible growth to drive the markets of tomorrow. The upcoming Helix transaction represents a defining milestone in our pursuit of a £1bn valuation.</p>
+                
+                <div class="quote-block">
+                    <div class="quote-text">“Five years ago they told us Vantage was too ambitious. Three years ago they told us the numbers were impossible. Tonight we’re celebrating a business worth almost a billion pounds. The next chapter will be even bigger. Enjoy yourselves. Tomorrow, we get back to work.”</div>
+                    <div class="quote-author">— Julian Vane, Founder & Chief Executive Officer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PEOPLE SECTION -->
+        <section id="people" class="section">
+            <h1 class="page-title">Organisation & Governance</h1>
+            <p class="page-subtitle">Public directory of executive leadership, core functions, and key market participants.</p>
+            <div id="people-container"></div>
+        </section>
+
+        <!-- EVIDENCE SECTION -->
+        <section id="evidence" class="section">
+            <h1 class="page-title">Official Evidence Register</h1>
+            <p class="page-subtitle">Internal regulatory and compliance evidence portal. Only officially released or registered items appear here.</p>
+            
+            <div class="filters">
+                <input type="text" id="evidence-search" class="filter-input" placeholder="Search ID or Title..." oninput="filterEvidence()">
+                <select id="evidence-tag" class="filter-select" onchange="filterEvidence()">
+                    <option value="ALL">All Categories</option>
+                    <option value="CORPORATE">Corporate</option>
+                    <option value="FINANCIAL">Financial</option>
+                    <option value="DIGITAL">Digital</option>
+                    <option value="SYSTEM">System</option>
+                    <option value="FORENSIC">Forensic</option>
+                    <option value="LEGAL">Legal</option>
+                    <option value="PHYSICAL">Physical</option>
+                    <option value="PUBLIC">Public</option>
+                </select>
+            </div>
+
+            <div class="evidence-grid" id="evidence-container">
+                <!-- Dynamically populated -->
+            </div>
+            
+            <div style="margin-top: 40px; padding: 20px; background: var(--panel-grey); font-size: 0.9rem;">
+                <strong>Note on Evidence Registration:</strong> Portable evidence may be officially registered. Once registered, the public record permanently confirms the Evidence ID, basic identity/title, and registration time. The physical object may subsequently be traded, hidden, or stolen, but its discovery cannot be erased from this register.
+            </div>
+        </section>
+
+        <!-- FORENSICS SECTION -->
+        <section id="forensics" class="section">
+            <h1 class="page-title">Forensic Bulletins</h1>
+            <p class="page-subtitle">Chronological feed of official findings and factual disclosures.</p>
+            
+            <div class="timeline" id="forensics-container">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- SUCCESSION SECTION -->
+        <section id="succession" class="section">
+            <h1 class="page-title">Corporate Succession</h1>
+            <p class="page-subtitle">Shareholder and governance portal for executive appointments.</p>
+            
+            <div id="succession-container">
+                <!-- Dynamically populated -->
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3>Succession Governance Rules</h3>
+                <ul class="rules-list">
+                    <li><strong>Nomination Deposit:</strong> £200,000 corporate processing fee.</li>
+                    <li><strong>Signatures:</strong> Candidates require signatures from two voting shareholders to appear on the ballot.</li>
+                    <li><strong>Restriction:</strong> Candidates cannot nominate themselves. A nomination signature does not bind the voter to a final vote.</li>
+                    <li><strong>Majority Required:</strong> 5 votes.</li>
+                    <li><strong>Blocs:</strong> Olivier’s 3 votes and Jane’s 2 votes are indivisible blocs.</li>
+                    <li><strong>Runoff Procedure:</strong> If no candidate receives 5 votes, the top two proceed to a runoff. If tied for second, all tied candidates proceed. The lowest-scoring candidate is eliminated sequentially until a majority is reached.</li>
+                    <li><strong>Conduct:</strong> Deals and bribes are strictly outside official governance. Votes are secret. Private deals are not enforceable. Suspicion or accusation of misconduct does not remove candidacy or voting rights.</li>
+                </ul>
+
+                <h4 style="margin-top: 24px;">Public Vote Weights</h4>
+                <div class="voting-weights">
+                    <div class="weight-card"><div class="weight-num">3</div><div class="metadata-label">Olivier</div></div>
+                    <div class="weight-card"><div class="weight-num">2</div><div class="metadata-label">Jane</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Tom</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Dave</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Yu</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Andree</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVESTIGATIONS SECTION -->
+        <section id="investigations" class="section">
+            <h1 class="page-title">Paid Investigations</h1>
+            <p class="page-subtitle">Schedule of fees for internal audits, forensic processing, and external analysis.</p>
+            
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Target Examples</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Public-record search</strong></td>
+                        <td>Corporate ownership, basic background, source records</td>
+                        <td class="price-val">£100,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digital / metadata analysis</strong></td>
+                        <td>Document provenance, metadata, deleted records, access/system logs</td>
+                        <td class="price-val">£200,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Forensic analysis</strong></td>
+                        <td>Physical/device examination, trace analysis</td>
+                        <td class="price-val">£200,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Financial trace</strong></td>
+                        <td>Ledger tracing, offshore structures, payment tracing</td>
+                        <td class="price-val">£250,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background-color: var(--panel-grey); padding: 24px; border-left: 2px solid var(--text-main);">
+                <ul class="rules-list" style="margin-bottom: 0;">
+                    <li>An item must carry an eligible evidence tag to be processed.</li>
+                    <li>If an evidence item is not eligible for the requested investigation, no fee is charged.</li>
+                    <li>Results are initially private to the purchaser unless they choose to release/register them publicly.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RULES SECTION -->
+        <section id="rules" class="section">
+            <h1 class="page-title">Operational Rules</h1>
+            <p class="page-subtitle">Guidelines for the duration of the event.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                <div>
+                    <h3>You May</h3>
+                    <ul class="rules-list">
+                        <li>Lie, bluff, and bribe.</li>
+                        <li>Trade information.</li>
+                        <li>Make deals and break deals.</li>
+                        <li>Campaign for succession.</li>
+                        <li>Steal eligible unattended game property from designated game areas/containers.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>You May Not</h3>
+                    <ul class="rules-list">
+                        <li>Alter or forge official evidence.</li>
+                        <li>Destroy fixed evidence.</li>
+                        <li>Search real handbags, coats, pockets, or real personal storage.</li>
+                        <li>Take real phones, wallets, keys, jewellery, or medication.</li>
+                        <li>Physically pickpocket or snatch anything another player is holding.</li>
+                        <li>Invent new canon and present it as established fact.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 32px; background-color: var(--panel-grey); padding: 24px;">
+                <h3>Game Mechanics Clarifications</h3>
+                <ul class="rules-list">
+                    <li><strong>Evidence Canon:</strong> Official evidence published on this site is canonically genuine. However, players are completely free to claim that it is AI-generated, planted, manipulated, politically motivated, institutional propaganda, or taken out of context.</li>
+                    <li><strong>Abilities:</strong> Character abilities cannot be transferred or sold. Information obtained through them may be traded.</li>
+                    <li><strong>Timing:</strong> Real arrival time is outside the fiction. A late player’s canonical earlier actions still occurred.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MISSED / BRIEFING SECTION -->
+        <section id="missed" class="section">
+            <h1 class="page-title">Executive Briefing</h1>
+            <p class="page-subtitle">Chronological record of established public canon.</p>
+            
+            <div class="timeline" id="missed-container">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Vantage House Group. Confidential.</p>
+        <p style="font-size: 0.75rem; margin-top: 8px;">For internal regulatory purposes only.</p>
+    </footer>
+
+    <script>
+        // Character Data
+        const characters = [
+            { name: "Julian", role: "Founder & Chief Executive Officer", group: "Leadership / Governance", desc: "Founder of Vantage House Group." },
+            { name: "Helen", role: "Chief of Staff", group: "Leadership / Governance", desc: "Oversees executive operations and CEO liaison." },
+            { name: "Tom", role: "Chair of Audit & Risk", group: "Leadership / Governance", desc: "Board member responsible for regulatory and risk oversight." },
+            { name: "Dave", role: "Private Banker / Non-Executive Director", group: "Leadership / Governance", desc: "Wealth management executive and board representative." },
+            
+            { name: "Josh", role: "Group Strategy Director", group: "Core Vantage Functions", desc: "Leads long-term corporate strategy and major acquisitions." },
+            { name: "Ope", role: "Operations & Special Projects", group: "Core Vantage Functions", desc: "Handles internal operational logistics and cross-departmental projects." },
+            { name: "Phil", role: "Chief Information Security Officer", group: "Core Vantage Functions", desc: "Manages digital security, infrastructure protection, and data compliance." },
+            { name: "John", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs the mathematical models and trading systems architecture." },
+            { name: "Lento", role: "Risk Modelling", group: "Core Vantage Functions", desc: "Analyzes quantitative risk and market exposure." },
+            { name: "Naomi", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "In-house legal counsel specializing in mergers and acquisitions." },
+            { name: "Chris", role: "Internal Audit", group: "Core Vantage Functions", desc: "Ensures internal financial controls and policy adherence." },
+            { name: "Olu", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Directs human resources and corporate culture." },
+            { name: "James", role: "Helix Due-Diligence Associate", group: "Core Vantage Functions", desc: "Junior associate embedded on the upcoming Helix transaction." },
+
+            { name: "Olivier", role: "Cornerstone Investor", group: "Board / Shareholders / Capital", desc: "Major institutional shareholder with significant board influence." },
+            { name: "Jack", role: "Private Equity Partner / Board Director", group: "Board / Shareholders / Capital", desc: "Represents private equity interests on the board." },
+            { name: "Andree", role: "Family Office / Shareholder", group: "Board / Shareholders / Capital", desc: "Manages private family wealth invested in Vantage." },
+            { name: "Jane", role: "Legacy Shareholder", group: "Board / Shareholders / Capital", desc: "Long-standing stakeholder with deep institutional ties." },
+
+            { name: "Sara", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Manages political relationships and regulatory lobbying." },
+            { name: "Jennifer", role: "Activist Short-Seller & Investigator", group: "External Advisers & Market Participants", desc: "External market participant known for aggressive institutional investigations." },
+            { name: "Adam", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "External consultant for critical PR and political crisis management." },
+            { name: "Yu", role: "Hedge Fund Investor", group: "External Advisers & Market Participants", desc: "External institutional investor monitoring the firm's market position." },
+            { name: "Vanessa", role: "Corporate Intelligence Adviser", group: "External Advisers & Market Participants", desc: "Provides discreet corporate intelligence and private advisory." },
+            { name: "Rhiannon", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "External market analyst covering the financial sector." },
+            { name: "Ricardo", role: "Crypto Founder / Venture Capitalist", group: "External Advisers & Market Participants", desc: "Technology entrepreneur with intersecting financial interests." }
+        ];
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('show');
+        }
+
+        // Router
+        function router() {
+            const hash = window.location.hash || '#home';
+            
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            
+            // Show target section
+            const target = document.querySelector(hash);
+            if (target) {
+                target.classList.add('active');
+            } else {
+                document.getElementById('home').classList.add('active');
+            }
+
+            // Update nav links active state
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu if open
+            document.getElementById('nav-links').classList.remove('show');
+        }
+
+        // Render Functions
+        function renderApp() {
+            // Banner
+            const banner = document.getElementById('crisis-banner');
+            if (publicState.incidentActive || publicState.announcement) {
+                banner.textContent = publicState.announcement || "EXECUTIVE INCIDENT — INTERNAL INVESTIGATION ACTIVE";
+                banner.classList.add('active');
+            } else {
+                banner.classList.remove('active');
+            }
+
+            // People
+            const peopleContainer = document.getElementById('people-container');
+            const groups = ["Leadership / Governance", "Core Vantage Functions", "Board / Shareholders / Capital", "External Advisers & Market Participants"];
+            
+            let peopleHTML = "";
+            groups.forEach(group => {
+                const groupMembers = characters.filter(c => c.group === group);
+                if (groupMembers.length > 0) {
+                    peopleHTML += `
+                        <div class="org-group">
+                            <h2 class="org-group-title">${group}</h2>
+                            <div class="people-grid">
+                                ${groupMembers.map(c => `
+                                    <div class="person-card">
+                                        <div class="person-name">${c.name}</div>
+                                        <div class="person-role">${c.role}</div>
+                                        <div class="person-desc">${c.desc}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            peopleContainer.innerHTML = peopleHTML;
+
+            // Evidence (Initial Render)
+            filterEvidence();
+
+            // Forensics
+            const forensicsContainer = document.getElementById('forensics-container');
+            if (publicState.forensics.length === 0) {
+                forensicsContainer.innerHTML = "<p>No official findings released at this time.</p>";
+            } else {
+                forensicsContainer.innerHTML = publicState.forensics.map(f => `
+                    <div class="timeline-event">
+                        <div class="event-time">${f.time} | FORENSIC BULLETIN</div>
+                        <div class="event-title">${f.title}</div>
+                        <p>${f.wording}</p>
+                        ${f.evidenceIds ? `<div class="metadata-label">Ref: ${f.evidenceIds.join(', ')}</div>` : ''}
+                    </div>
+                `).join('');
+            }
+
+            // Succession
+            const successionContainer = document.getElementById('succession-container');
+            if (publicState.successionState === "closed") {
+                successionContainer.innerHTML = `
+                    <div class="succession-status">
+                        <div class="status-badge" style="background-color: var(--text-muted)">CLOSED</div>
+                        <h2>Succession Process Not Yet Open</h2>
+                        <p>No emergency succession protocol is currently active.</p>
+                    </div>
+                `;
+            } else if (publicState.successionState === "open") {
+                successionContainer.innerHTML = `
+                    <div class="succession-status" style="border-color: var(--accent-burgundy);">
+                        <div class="status-badge" style="background-color: var(--accent-burgundy)">ACTIVE</div>
+                        <h2>Emergency Succession Protocol Initiated</h2>
+                        <p>The Board is receiving official nominations for Interim CEO.</p>
+                    </div>
+                    ${publicState.candidates.length > 0 ? `
+                        <h3>Official Candidates</h3>
+                        <ul class="rules-list" style="margin-bottom: 24px;">
+                            ${publicState.candidates.map(c => `<li><strong>${c}</strong></li>`).join('')}
+                        </ul>
+                    ` : '<p style="margin-bottom: 24px;"><em>No candidates formally registered yet.</em></p>'}
+                `;
+            } else if (publicState.successionState === "resolved") {
+                successionContainer.innerHTML = `
+                    <div class="succession-status" style="background-color: var(--accent-navy); color: var(--white); border:none;">
+                        <div class="status-badge" style="background-color: var(--white); color: var(--accent-navy);">RESOLVED</div>
+                        <h2 style="color: var(--white); margin-top: 12px;">INTERIM CEO APPOINTED</h2>
+                        <p style="font-family: var(--font-serif); font-size: 2rem; margin: 16px 0;">${publicState.interimCEO || "TBC"}</p>
+                    </div>
+                    <div class="budget-note">
+                        <strong>Governance Note:</strong> Interim CEO discretionary budget authorized: £300,000. <br>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">This constitutes Vantage corporate funds, not personal capital, and is excluded from personal asset calculations.</span>
+                    </div>
+                `;
+            }
+
+            // Missed / Briefing
+            const missedContainer = document.getElementById('missed-container');
+            if (publicState.publicEvents.length === 0) {
+                missedContainer.innerHTML = "<p>No incidents on record.</p>";
+            } else {
+                missedContainer.innerHTML = publicState.publicEvents.map(e => `
+                    <div class="timeline-event">
+                        <div class="event-time">${e.time}</div>
+                        <p style="font-size: 1.1rem; font-weight: 500;">${e.event}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Evidence Filtering Logic
+        function filterEvidence() {
+            const searchTerm = document.getElementById('evidence-search').value.toLowerCase();
+            const tagFilter = document.getElementById('evidence-tag').value;
+            const container = document.getElementById('evidence-container');
+            
+            // Only render items that exist in publicState
+            const visibleEvidence = publicState.evidence.filter(item => {
+                // In this architecture, we don't use WITHHELD. If it's in publicState, it is shown.
+                const matchesSearch = item.id.toLowerCase().includes(searchTerm) || item.title.toLowerCase().includes(searchTerm);
+                const matchesTag = tagFilter === "ALL" || (item.tags && item.tags.includes(tagFilter));
+                return matchesSearch && matchesTag;
+            });
+
+            if (visibleEvidence.length === 0) {
+                container.innerHTML = "<p>No matching evidence records found.</p>";
+                return;
+            }
+
+            container.innerHTML = visibleEvidence.map(item => `
+                <div class="evidence-card">
+                    <div><span class="evidence-id">${item.id}</span></div>
+                    <div class="evidence-main">
+                        <h3>${item.title}</h3>
+                        <div class="evidence-tags">
+                            ${item.tags ? item.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
+                        </div>
+                        <p style="font-size: 0.9rem;">${item.summary}</p>
+                    </div>
+                    <div class="evidence-meta">
+                        <div class="metadata-label">${item.status || "REGISTERED"}</div>
+                        <div style="margin-top: 4px;">${item.time}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialization
+        window.addEventListener('hashchange', router);
+        window.addEventListener('DOMContentLoaded', () => {
+            renderApp();
+            router();
+        });
+    </script>
+</body>
+</html>
