@@ -297,6 +297,60 @@
         .person-role { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); line-height: 1.3; }
         .person-desc { font-size: 0.9rem; line-height: 1.5; }
 
+        /* Secondary / Tonight Section */
+        .tonight-section {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px dashed var(--border-color);
+        }
+        .tonight-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+        .tonight-subtitle {
+            font-family: var(--font-sans);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        .secondary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .secondary-card {
+            background-color: var(--panel-grey);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .secondary-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--accent-navy);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .secondary-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .secondary-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 2px; font-family: var(--font-serif); }
+        .secondary-role { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .secondary-desc { font-size: 0.85rem; line-height: 1.4; color: var(--text-main); }
+
         /* Evidence & Tables */
         .filters {
             display: flex;
@@ -467,6 +521,9 @@
     
     Public event shape:
     { time:"", event:"" }
+
+    Specialist adviser shape:
+    { name:"", photo:"", role:"", description:"" }
     ==========================================
     -->
     <script>
@@ -478,7 +535,8 @@
             candidates: [], 
             evidence: [], 
             forensics: [], 
-            publicEvents: []
+            publicEvents: [],
+            specialistAdvisers: []
         };
     </script>
 
@@ -703,35 +761,34 @@
 
     <script>
         // Character Data
-        // To add photos, place the image path in the 'photo' field (e.g. photo: "images/julian.jpg")
         const characters = [
-            { name: "Julian", photo: "", role: "Founder & Chief Executive Officer", group: "Leadership / Governance", desc: "Founder of Vantage House Group." },
-            { name: "Helen", photo: "", role: "Chief of Staff", group: "Leadership / Governance", desc: "Oversees executive operations and CEO liaison." },
-            { name: "Tom", photo: "", role: "Chair of Audit & Risk", group: "Leadership / Governance", desc: "Board member responsible for regulatory and risk oversight." },
-            { name: "Dave", photo: "", role: "Private Banker / Non-Executive Director", group: "Leadership / Governance", desc: "Wealth management executive and board representative." },
+            { name: "Julian", photo: "images/julian.jpg", role: "Founder & Chief Executive Officer", group: "Leadership / Governance", desc: "Founder of Vantage House Group." },
+            { name: "Helen", photo: "images/helen.jpg", role: "Chief of Staff", group: "Leadership / Governance", desc: "Oversees executive operations and CEO liaison." },
+            { name: "Tom", photo: "images/tom.jpg", role: "Chair of Audit & Risk", group: "Leadership / Governance", desc: "Board member responsible for regulatory and risk oversight." },
+            { name: "Dave", photo: "images/dave.jpg", role: "Private Banker / Non-Executive Director", group: "Leadership / Governance", desc: "Wealth management executive and board representative." },
             
-            { name: "Josh", photo: "", role: "Group Strategy Director", group: "Core Vantage Functions", desc: "Leads long-term corporate strategy and major acquisitions." },
-            { name: "Ope", photo: "", role: "Operations & Special Projects", group: "Core Vantage Functions", desc: "Handles internal operational logistics and cross-departmental projects." },
-            { name: "Phil", photo: "", role: "Chief Information Security Officer", group: "Core Vantage Functions", desc: "Manages digital security, infrastructure protection, and data compliance." },
-            { name: "John", photo: "", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs quantitative models and systems architecture across Vantage." },
-            { name: "Lento", photo: "", role: "Risk Modelling", group: "Core Vantage Functions", desc: "Analyses quantitative risk and market exposure." },
-            { name: "Naomi", photo: "", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "Advises on major transactions, deal structure and corporate legal risk." },
-            { name: "Chris", photo: "", role: "Internal Audit", group: "Core Vantage Functions", desc: "Ensures internal financial controls and policy adherence." },
-            { name: "Olu", photo: "", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Works on organisational design, workforce strategy and the employee impact of corporate decisions." },
-            { name: "James", photo: "", role: "Helix Due Diligence Associate", group: "Core Vantage Functions", desc: "Junior associate embedded on the upcoming Helix transaction." },
+            { name: "Josh", photo: "images/josh.jpg", role: "Group Strategy Director", group: "Core Vantage Functions", desc: "Leads long-term corporate strategy and major acquisitions." },
+            { name: "Ope", photo: "images/ope.jpg", role: "Operations & Special Projects", group: "Core Vantage Functions", desc: "Handles internal operational logistics and cross-departmental projects." },
+            { name: "Phil", photo: "images/phil.jpg", role: "Chief Information Security Officer", group: "Core Vantage Functions", desc: "Manages digital security, infrastructure protection, and data compliance." },
+            { name: "John", photo: "images/john.jpg", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs quantitative models and systems architecture across Vantage." },
+            { name: "Lento", photo: "images/lento.jpg", role: "Risk Modelling", group: "Core Vantage Functions", desc: "Analyses quantitative risk and market exposure." },
+            { name: "Naomi", photo: "images/naomi.jpg", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "Advises on major transactions, deal structure and corporate legal risk." },
+            { name: "Chris", photo: "images/chris.jpg", role: "Internal Audit", group: "Core Vantage Functions", desc: "Ensures internal financial controls and policy adherence." },
+            { name: "Olu", photo: "images/olu.jpg", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Works on organisational design, workforce strategy and the employee impact of corporate decisions." },
+            { name: "James", photo: "images/james.jpg", role: "Helix Due Diligence Associate", group: "Core Vantage Functions", desc: "Junior associate embedded on the upcoming Helix transaction." },
 
-            { name: "Olivier", photo: "", role: "Cornerstone Investor", group: "Board / Shareholders / Capital", desc: "Major institutional shareholder with significant board influence." },
-            { name: "Jack", photo: "", role: "Private Equity Partner / Board Director", group: "Board / Shareholders / Capital", desc: "Represents private equity interests on the board." },
-            { name: "Andree", photo: "", role: "Family Office / Shareholder", group: "Board / Shareholders / Capital", desc: "Manages private family wealth invested in Vantage." },
-            { name: "Jane", photo: "", role: "Legacy Shareholder", group: "Board / Shareholders / Capital", desc: "Long-standing stakeholder with deep institutional ties." },
+            { name: "Olivier", photo: "images/olivier.jpg", role: "Cornerstone Investor", group: "Board / Shareholders / Capital", desc: "Major institutional shareholder with significant board influence." },
+            { name: "Jack", photo: "images/jack.jpg", role: "Private Equity Partner / Board Director", group: "Board / Shareholders / Capital", desc: "Represents private equity interests on the board." },
+            { name: "Andree", photo: "images/andree.jpg", role: "Family Office / Shareholder", group: "Board / Shareholders / Capital", desc: "Manages private family wealth invested in Vantage." },
+            { name: "Jane", photo: "images/jane.jpg", role: "Legacy Shareholder", group: "Board / Shareholders / Capital", desc: "Long-standing stakeholder with deep institutional ties." },
 
-            { name: "Sara", photo: "", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Works across government affairs, policy relationships and external political engagement." },
-            { name: "Jennifer", photo: "", role: "Activist Short-Seller & Investigator", group: "External Advisers & Market Participants", desc: "External market participant known for aggressive institutional investigations." },
-            { name: "Adam", photo: "", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "Advises on crisis communications, media strategy and Westminster-facing issues." },
-            { name: "Yu", photo: "", role: "Hedge Fund Investor", group: "External Advisers & Market Participants", desc: "External institutional investor monitoring the firm's market position." },
-            { name: "Vanessa", photo: "", role: "Corporate Intelligence Adviser", group: "External Advisers & Market Participants", desc: "Provides discreet corporate intelligence and private advisory." },
-            { name: "Rhiannon", photo: "", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "Conducts public-source, market and company research supporting Vantage analysis." },
-            { name: "Ricardo", photo: "", role: "Crypto Founder / Venture Capitalist", group: "External Advisers & Market Participants", desc: "Technology entrepreneur with intersecting financial interests." }
+            { name: "Sara", photo: "images/sara.jpg", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Works across government affairs, policy relationships and external political engagement." },
+            { name: "Jennifer", photo: "images/jennifer.jpg", role: "Activist Short-Seller & Investigator", group: "External Advisers & Market Participants", desc: "External market participant known for aggressive institutional investigations." },
+            { name: "Adam", photo: "images/adam.jpg", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "Advises on crisis communications, media strategy and Westminster-facing issues." },
+            { name: "Yu", photo: "images/yu.jpg", role: "Hedge Fund Investor", group: "External Advisers & Market Participants", desc: "External institutional investor monitoring the firm's market position." },
+            { name: "Vanessa", photo: "images/vanessa.jpg", role: "Corporate Intelligence Adviser", group: "External Advisers & Market Participants", desc: "Provides discreet corporate intelligence and private advisory." },
+            { name: "Rhiannon", photo: "images/rhiannon.jpg", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "Conducts public-source, market and company research supporting Vantage analysis." },
+            { name: "Ricardo", photo: "images/ricardo.jpg", role: "Crypto Founder / Venture Capitalist", group: "External Advisers & Market Participants", desc: "Technology entrepreneur with intersecting financial interests." }
         ];
 
         // Mobile Menu Toggle
@@ -831,7 +888,7 @@
                 crisisBanner.classList.remove('active');
             }
 
-            // People
+            // People (Main Directory)
             const peopleContainer = document.getElementById('people-container');
             const groups = ["Leadership / Governance", "Core Vantage Functions", "Board / Shareholders / Capital", "External Advisers & Market Participants"];
             
@@ -862,7 +919,50 @@
                     `;
                 }
             });
-            peopleContainer.innerHTML = peopleHTML;
+
+            // People (Secondary / Tonight at Vantage)
+            let tonightHTML = `
+                <div class="tonight-section">
+                    <h2 class="tonight-title">Tonight at Vantage</h2>
+                    <p class="tonight-subtitle">Event personnel and specialist support associated with tonight’s gala.</p>
+                    <div class="secondary-grid">
+            `;
+
+            // Always render Sarnie initially
+            const tonightStaff = [
+                {
+                    name: "Sarnie Sandwich",
+                    photo: "images/sarnie.jpg",
+                    role: "Event Hospitality & Catering",
+                    description: "Supporting tonight’s Vantage House gala, guest hospitality and event service."
+                }
+            ];
+
+            // Dynamically add any specialists the host activates later
+            if (publicState.specialistAdvisers && publicState.specialistAdvisers.length > 0) {
+                publicState.specialistAdvisers.forEach(adv => tonightStaff.push(adv));
+            }
+
+            tonightStaff.forEach(person => {
+                let avatarContent = person.photo ? `<img src="${person.photo}" alt="${person.name}">` : person.name.charAt(0);
+                tonightHTML += `
+                    <div class="secondary-card">
+                        <div class="secondary-avatar">
+                            ${avatarContent}
+                        </div>
+                        <div>
+                            <div class="secondary-name">${person.name}</div>
+                            <div class="secondary-role">${person.role}</div>
+                            <div class="secondary-desc">${person.description}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            tonightHTML += `</div></div>`;
+
+            // Combine both blocks and render
+            peopleContainer.innerHTML = peopleHTML + tonightHTML;
 
             // Evidence (Initial Render)
             filterEvidence();
@@ -957,8 +1057,6 @@
             });
 
             if (visibleEvidence.length === 0) {
-                // If there are truly 0 items in the state, show the empty state message.
-                // Otherwise show search not found.
                 if (publicState.evidence.length === 0) {
                     container.innerHTML = "<p>No evidence records have been released.</p>";
                 } else {
