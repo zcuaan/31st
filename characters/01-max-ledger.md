@@ -7,6 +7,7 @@ organisation: Vantage House Group
 starting_cash: 500000
 ceo_eligible: true
 power: Executive Authority
+version: v2-frozen
 ---
 
 # MAX LEDGER
@@ -20,17 +21,17 @@ power: Executive Authority
 
 ## QUICK START
 
-### YOUR 3 OBJECTIVES
+### YOUR OBJECTIVES
 
 1. **Become Interim CEO.**
 2. **Keep your role in Vantage’s misleading financial reporting from becoming public before the CEO vote.**
-3. **Work out who actually caused Julian Vane’s death.**
+3. **Work out enough of the real fatal plot to clear yourself.**
 
 ### YOUR POWER — EXECUTIVE AUTHORITY
 
 **Once per game**, choose one currently available item marked `CORPORATE`.
 
-Give your ability card to the GM to receive its prepared **executive context / approval chain** privately.
+Give your ability card to the GM to receive its prepared **executive context / approval-chain information** privately.
 
 You may keep, trade, sell or reveal the result.
 
@@ -62,11 +63,9 @@ Eventually, mentor became rival.
 
 Julian thought you had become reckless, too valuation-driven and too obviously interested in replacing him.
 
-You thought Julian had become controlling, hypocritical and incapable of imagining Vantage without himself at the centre.
+You thought Julian had become controlling, hypocritical and unwilling to admit that Vantage’s aggressive culture was partly his creation.
 
-Both of you were probably right.
-
-Shortly before his death, you caught the end of a tense conversation between Julian and **Cole Control**.
+Shortly before his death, you caught the end of a tense conversation between Julian and **Cole Control**, Chair of Audit & Risk.
 
 You clearly heard Julian say:
 
@@ -98,7 +97,7 @@ You supported aggressive valuation decisions and pressured controls.
 
 You knew other people were carrying risks that ultimately benefited you.
 
-You told yourself it was temporary and defensible because the underlying business was strong.
+You told yourself it was commercially defensible because the underlying business was strong and problems could be corrected later.
 
 You had also begun trying to find out **what evidence Julian had collected and who else had seen it**.
 
@@ -113,30 +112,26 @@ To get onto the ballot, you need:
 - a **£200,000 non-refundable nomination deposit**
 - signatures from **two voting shareholders**
 
-To win, you ultimately need **5 of the 9 weighted votes**.
+To win, you need **5 of the 9 weighted votes**.
 
 A nomination signature does not bind anyone.
 
 > **A PROMISE IS NOT A VOTE.**
 
-Use your separate CEO campaign tracker for signatures, promises, deals and bribes.
+Use your separate CEO tracker for signatures, promises, deals and bribes.
 
 ---
 
 ## PEOPLE TO KNOW
 
 ### Cole Control — Chair of Audit & Risk
-
-You pushed for a major control exception.
-
-Cole approved it.
+You pushed for a major control exception. Cole approved it.
 
 You considered him cautious but practical.
 
 Julian’s final argument with him has made you curious.
 
 ### Rita Distribution — Chief of Staff
-
 Brilliant, organised and far more hostile to capitalism than you think is sensible.
 
 You disagree constantly, but you respect her competence.
@@ -144,14 +139,11 @@ You disagree constantly, but you respect her competence.
 She knew Julian’s movements, moods and plans better than almost anyone.
 
 ### Lee Verage — Private Equity Partner / Board Director
-
 Your most obvious rival for control of Vantage.
 
 Lee thinks founders and executives need disciplined ownership.
 
 You think Lee would carve Vantage into pieces and call it efficiency.
-
-Neither of you wants the other running the company.
 
 ---
 
@@ -183,28 +175,11 @@ That contradiction is the role.
 
 ## MAKE MAX YOURS
 
-You may invent harmless flavour such as:
-
-- accent or way of speaking
-- clothing style
-- mannerisms
-- hobbies
-- favourite restaurants
-- London neighbourhood
-- ridiculous finance habits
-- catchphrases
-- harmless personal history
-- props
+You may invent harmless flavour such as accent, clothing, mannerisms, hobbies, neighbourhood, catchphrases, finance habits, harmless personal history and props.
 
 Possible energy:
 
 **finance bro • future CEO • polished City psychopath • gilet guy • suspiciously expensive watch • fake-casual tech executive**
-
-Possible interests:
-
-**padel • F1 • longevity • restaurants • watches • coffee • startups**
-
-None are compulsory.
 
 ---
 
@@ -220,19 +195,6 @@ You may not create new canon.
 
 ## YOU MAY
 
-You may:
+You may lie, bluff, accuse, bribe, betray, campaign, lend money, sell information, make or break deals, steal unattended eligible game items and hide portable evidence you legitimately obtain.
 
-- lie
-- bluff
-- accuse
-- bribe
-- betray
-- campaign
-- lend money
-- sell information
-- make or break written deals
-- steal unattended eligible game items
-- hide portable evidence you legitimately obtain
-- claim official evidence is fake, AI-generated, planted, politically motivated or taken out of context
-
-Official evidence remains canonically genuine.
+Official evidence is canonically genuine, although you are free to claim it is fake, planted, manipulated, AI-generated or taken out of context.
