@@ -15,19 +15,38 @@ power: Executive Authority
 ## Group Strategy Director, Vantage House Group
 
 **Vibe:** ambitious • persuasive • competitive  
-**Role size:** HUGE  
 **Starting cash:** £500,000  
 **CEO eligible:** YES
 
 ---
 
+## QUICK START
+
+### YOUR 3 OBJECTIVES
+
+1. **Become Interim CEO.**
+2. **Keep your role in Vantage’s misleading financial reporting from becoming public before the CEO vote.**
+3. **Work out who actually caused Julian’s death.**
+
+### YOUR POWER — EXECUTIVE AUTHORITY
+
+**Once per game**, choose one currently available item marked `CORPORATE`.
+
+Give your ability card to the GM to receive its prepared **executive context / approval chain** privately.
+
+You may keep, trade, sell or reveal the result.
+
+Your power cannot unlock evidence that is not yet in play.
+
+---
+
 ## WHO YOU ARE
 
-You are one of Vantage House Group’s most powerful younger executives and one of the obvious contenders to succeed Julian Vane.
+You are one of Vantage House Group’s most powerful younger executives and an obvious contender to succeed founder-CEO **Julian Vane**.
 
-Julian gave you your big break. You repaid him by becoming extremely good at making Vantage grow.
+Julian gave you your big break. You became extremely good at making Vantage grow.
 
-You genuinely believe in ambition, competition and markets. You do not apologise for wanting money, influence or the top job. In your view, successful people should be rewarded for producing results.
+You genuinely believe in ambition, competition and markets. You do not apologise for wanting money, influence or the top job.
 
 You have been waiting for the moment when Vantage stops being Julian’s company and becomes yours.
 
@@ -35,23 +54,23 @@ It may have arrived sooner than expected.
 
 ---
 
-## YOUR HISTORY WITH JULIAN
+## JULIAN AND YOU
 
 Julian was once your mentor.
 
-He promoted you, trusted you with increasingly important work and taught you how much could be achieved if you moved faster than everyone else.
+He promoted you, trusted you and taught you how much could be achieved by moving faster than everyone else.
 
-Eventually, that relationship changed.
+Eventually, mentor became rival.
 
-Julian thought you had become reckless, too obsessed with valuation and too obviously interested in replacing him.
+Julian thought you had become reckless, too valuation-driven and too obviously interested in replacing him.
 
-You thought Julian had become defensive, controlling and incapable of imagining a Vantage that did not revolve around him.
+You thought Julian had become controlling, hypocritical and incapable of imagining Vantage without himself at the centre.
 
 Both of you were probably right.
 
-Shortly before his death, you saw the end of a tense conversation between Julian and **Tom Balance**.
+Shortly before his death, you caught the end of a tense conversation between Julian and **Tom Balance**.
 
-You distinctly heard Julian say:
+You clearly heard Julian say:
 
 > **“You signed it.”**
 
@@ -62,11 +81,11 @@ You do not know exactly what he meant.
 ## WHAT YOU KNOW
 
 - Julian had become seriously worried about Vantage’s financial reporting.
-- He was considering stopping or suspending the enormous **Helix transaction**.
-- You knew some of the numbers and assumptions being used around Vantage were becoming increasingly difficult to defend.
-- You pushed hard for aggressive interpretations and for controls to be relaxed when they got in the way of growth.
+- He was considering stopping or suspending the huge **Helix transaction**.
+- Some Vantage numbers and assumptions were becoming increasingly hard to defend.
+- You pushed for aggressive interpretations and for controls to be relaxed when they got in the way of growth.
 - Julian had started collecting old approvals, audit records and internal data.
-- If Helix collapses, you personally stand to lose money, influence and possibly your path to becoming CEO.
+- If Helix collapses, you could lose money, influence and your route to CEO.
 - During the critical part of the evening, you were on a genuine private business call away from the main crowd for several minutes.
 
 ---
@@ -77,80 +96,32 @@ You were not innocently surprised by Vantage’s financial problems.
 
 You pushed people to make the numbers work.
 
-You supported aggressive valuation decisions.
+You supported aggressive valuation decisions and pressured controls.
 
-You pressured controls.
+You knew other people were carrying risks that ultimately benefited you.
 
-You knew that some senior colleagues and subordinates were carrying risks that ultimately benefited you.
+You told yourself it was temporary and defensible because the underlying business was strong.
 
-You told yourself this was temporary, defensible and necessary because the underlying business was strong.
+You had also begun trying to find out **what evidence Julian had collected and who else had seen it**.
 
-Julian’s death does not magically make those decisions disappear.
-
-You had also started trying to find out **what evidence Julian had collected and who else had seen it**.
-
-If the wrong documents become public before the CEO vote, your campaign could implode.
+If the wrong documents become public before the CEO vote, your campaign could collapse.
 
 ---
 
-## YOUR OBJECTIVES TONIGHT
+## BECOMING CEO
 
-### 1. Become Interim CEO
-
-To appear on the ballot, you need:
+To get onto the ballot, you need:
 
 - a **£200,000 nomination deposit**
 - signatures from **two voting shareholders**
 
 To win, you ultimately need **5 of the 9 weighted votes**.
 
-A nomination signature is not a promise of a final vote.
+A nomination signature does not bind anyone.
 
-A promise is not a vote.
+> **A PROMISE IS NOT A VOTE.**
 
-### 2. Contain your financial exposure
-
-Keep your knowing role in Vantage’s misleading or aggressive financial reporting from becoming publicly established **before the CEO vote**.
-
-You may lie, negotiate, buy information, recover documents, make deals or argue that your decisions were commercially defensible.
-
-You may **not** alter or destroy official evidence.
-
-### 3. Work out who actually caused Julian’s death
-
-Being rich, ambitious and financially compromised makes you an obvious suspect.
-
-Finding the real fatal plot is one of the best ways to clear yourself.
-
----
-
-## YOUR POWER — EXECUTIVE AUTHORITY
-
-**Once per game**, choose one currently available piece of evidence marked:
-
-`CORPORATE`
-
-Hand your ability card to the GM.
-
-You receive the prepared **executive context / approval-chain information** for that item privately.
-
-Your power does not unlock evidence that has not entered play yet.
-
-You may keep the result secret, trade it, sell it or reveal it.
-
----
-
-## YOUR STARTING RESOURCES
-
-You begin with:
-
-- **£500,000 Vantage Money**
-- your **Executive Authority** ability card
-- your **CEO campaign tracker**
-- your own knowledge of the controversial control exception you pushed for
-- your memory of Julian telling Tom: **“You signed it.”**
-
-You do **not** begin with the signed control-exception document itself.
+Use your separate CEO campaign tracker for signatures, promises, deals and bribes.
 
 ---
 
@@ -162,13 +133,13 @@ You pushed for a major control exception.
 
 Tom approved it.
 
-You considered him cautious but ultimately practical.
+You considered him cautious but practical.
 
-Julian’s final argument with Tom has made you curious.
+Julian’s final argument with him has made you curious.
 
 ### Helen Haviour — Chief of Staff
 
-Brilliant, organised and far more ideologically hostile to capitalism than you think is sensible.
+Brilliant, organised and far more hostile to capitalism than you think is sensible.
 
 You disagree constantly, but you respect her competence.
 
@@ -178,11 +149,11 @@ She knew Julian’s movements, moods and plans better than almost anyone.
 
 Your most obvious rival for control of Vantage.
 
-Jack thinks founders and executives require disciplined ownership.
+Jack thinks founders and executives need disciplined ownership.
 
 You think Jack would carve Vantage into pieces and call it efficiency.
 
-Neither of you particularly wants the other running the company.
+Neither of you wants the other running the company.
 
 ---
 
@@ -204,21 +175,9 @@ It is:
 
 > **“And?”**
 
-You are persuasive, competitive and comfortable negotiating.
+Campaign. Make deals. Buy votes. Buy information. Defend your record. Attack other people’s.
 
-Campaign.
-
-Make deals.
-
-Buy votes.
-
-Buy information.
-
-Defend your record.
-
-Attack other people’s.
-
-You are allowed to genuinely care about solving Julian’s murder while simultaneously trying to become CEO before his body is cold.
+You can genuinely want Julian’s killer found while simultaneously trying to become CEO before his body is cold.
 
 That contradiction is the role.
 
@@ -226,18 +185,7 @@ That contradiction is the role.
 
 ## MAKE JOSH YOURS
 
-You may invent harmless flavour such as:
-
-- accent or way of speaking
-- clothing style
-- mannerisms
-- hobbies
-- favourite restaurants
-- London neighbourhood
-- ridiculous finance habits
-- catchphrases
-- harmless personal history
-- props
+You may invent harmless flavour: accent, clothes, mannerisms, hobbies, neighbourhood, catchphrases, finance habits, personal style and props.
 
 Possible energy:
 
@@ -245,7 +193,7 @@ Possible energy:
 
 Possible interests:
 
-**padel • F1 • longevity • restaurants • watches • business biographies • coffee • startups**
+**padel • F1 • longevity • restaurants • watches • coffee • startups**
 
 None are compulsory.
 
@@ -253,61 +201,16 @@ None are compulsory.
 
 ## DO NOT INVENT
 
-Do not invent:
+Do not invent new evidence, crimes, alibis, secret relationships, access privileges, money, votes, powers or facts about Julian’s death.
 
-- new evidence
-- new crimes
-- additional financial wrongdoing
-- new alibis
-- secret relationships
-- new access privileges
-- additional money
-- extra votes
-- extra powers
-- facts about Julian’s death
+You may speculate or lie about established facts.
 
-If something is not on your sheet or established by the game, you may speculate or lie about it — but you may not make it canon.
+You may not create new canon.
 
 ---
 
 ## YOU MAY
 
-You may:
+You may lie, bluff, accuse, bribe, betray, campaign, lend money, sell information, make or break written deals, steal unattended eligible game items, hide portable evidence you legitimately obtain, and claim official evidence is fake, AI-generated, planted or taken out of context.
 
-- lie
-- bluff
-- accuse
-- bribe
-- betray
-- campaign
-- lend money
-- sell information
-- make written deals
-- break written deals
-- steal unattended eligible game items
-- hide portable evidence you legitimately obtain
-- claim official evidence is fake, AI-generated, planted, politically motivated or taken out of context
-
-Official evidence remains canonically genuine regardless of what you claim.
-
----
-
-## CEO CAMPAIGN TRACKER
-
-**Nomination deposit paid:** □
-
-**Signature 1:** ______________________________
-
-**Signature 2:** ______________________________
-
-### Votes / promises / deals
-
-____________________________________________________________
-
-____________________________________________________________
-
-____________________________________________________________
-
-____________________________________________________________
-
-> **A PROMISE IS NOT A VOTE.**
+Official evidence remains canonically genuine.
