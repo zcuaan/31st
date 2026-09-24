@@ -636,23 +636,24 @@
             <div style="margin-top: 40px;">
                 <h3>Succession Governance Rules</h3>
                 <ul class="rules-list">
+                    <li><strong>Eligible Candidates:</strong> Max Ledger, Lee Verage, Cole Control, Opal Ration, Vince Ture.</li>
                     <li><strong>Nomination Deposit:</strong> £200,000 non-refundable nomination deposit. The deposit is paid into the Vantage treasury and is not returned if the candidate loses or withdraws. This is not personal income for another player.</li>
-                    <li><strong>Signatures:</strong> Candidates require signatures from two voting shareholders to appear on the ballot.</li>
+                    <li><strong>Signatures:</strong> Candidates require signatures from two voting shareholders to appear on the ballot. Voters may sign more than one nomination.</li>
                     <li><strong>Restriction:</strong> Candidates cannot nominate themselves. A nomination signature does not bind the voter to a final vote.</li>
                     <li><strong>Majority Required:</strong> 5 votes.</li>
-                    <li><strong>Blocs:</strong> Olivier’s 3 votes and Jane’s 2 votes are indivisible blocs.</li>
+                    <li><strong>Blocs:</strong> Hugh Stake’s 3 votes and Penny Sterling’s 2 votes are indivisible blocs.</li>
                     <li><strong>Runoff Procedure:</strong> If no candidate receives 5 votes, the top two proceed to a runoff. If tied for second, all tied candidates proceed. The lowest-scoring candidate is eliminated sequentially until a majority is reached.</li>
-                    <li><strong>Conduct:</strong> Suspicion or accusation of misconduct does not remove candidacy or voting rights.</li>
+                    <li><strong>Conduct:</strong> Voting takes place via secret ballot. Suspicion or accusation of misconduct does not remove candidacy or voting rights.</li>
                 </ul>
 
-                <h4 style="margin-top: 24px;">Public Vote Weights</h4>
+                <h4 style="margin-top: 24px;">Public Vote Weights (Total: 9)</h4>
                 <div class="voting-weights">
-                    <div class="weight-card"><div class="weight-num">3</div><div class="metadata-label">Olivier</div></div>
-                    <div class="weight-card"><div class="weight-num">2</div><div class="metadata-label">Jane</div></div>
-                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Tom</div></div>
-                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Dave</div></div>
-                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Yu</div></div>
-                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Andree</div></div>
+                    <div class="weight-card"><div class="weight-num">3</div><div class="metadata-label">Hugh Stake</div></div>
+                    <div class="weight-card"><div class="weight-num">2</div><div class="metadata-label">Penny Sterling</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Cole Control</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Cal Lateral</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Cass Flow</div></div>
+                    <div class="weight-card"><div class="weight-num">1</div><div class="metadata-label">Fran de Fonds</div></div>
                 </div>
             </div>
         </section>
@@ -667,7 +668,7 @@
                     <tr>
                         <th>Service</th>
                         <th>Target Examples</th>
-                        <th>Cost</th>
+                        <th>Cost (Vantage Money)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -697,7 +698,7 @@
             <div style="background-color: var(--panel-grey); padding: 24px; border-left: 2px solid var(--text-main);">
                 <ul class="rules-list" style="margin-bottom: 0;">
                     <li>An item must carry an eligible evidence tag to be processed.</li>
-                    <li>If an evidence item is not eligible for the requested investigation, no fee is charged.</li>
+                    <li>If a submitted item/question is invalid or has no prepared match, no fee is charged.</li>
                     <li>Results are initially private to the purchaser unless they choose to release/register them publicly.</li>
                 </ul>
             </div>
@@ -762,33 +763,38 @@
     <script>
         // Character Data
         const characters = [
-            { name: "Julian", photo: "images/julian.jpg", role: "Founder & Chief Executive Officer", group: "Leadership / Governance", desc: "Founder of Vantage House Group." },
-            { name: "Helen", photo: "images/helen.jpg", role: "Chief of Staff", group: "Leadership / Governance", desc: "Oversees executive operations and CEO liaison." },
-            { name: "Tom", photo: "images/tom.jpg", role: "Chair of Audit & Risk", group: "Leadership / Governance", desc: "Board member responsible for regulatory and risk oversight." },
-            { name: "Dave", photo: "images/dave.jpg", role: "Private Banker / Non-Executive Director", group: "Leadership / Governance", desc: "Wealth management executive and board representative." },
+            // Leadership / Governance
+            { name: "Julian Vane", photo: "images/julian-vane.jpg", role: "Founder & Chief Executive Officer", group: "Leadership / Governance", desc: "Founder of Vantage House Group." },
+            { name: "Rita Distribution", photo: "images/rita-distribution.jpg", role: "Chief of Staff", group: "Leadership / Governance", desc: "Oversees executive operations and CEO liaison." },
+            { name: "Cole Control", photo: "images/cole-control.jpg", role: "Chair of Audit & Risk", group: "Leadership / Governance", desc: "Board member responsible for regulatory and risk oversight." },
+            { name: "Cal Lateral", photo: "images/cal-lateral.jpg", role: "Private Banker / Non-Executive Director", group: "Leadership / Governance", desc: "Wealth management executive and board representative." },
             
-            { name: "Josh", photo: "images/josh.jpg", role: "Group Strategy Director", group: "Core Vantage Functions", desc: "Leads long-term corporate strategy and major acquisitions." },
-            { name: "Ope", photo: "images/ope.jpg", role: "Operations & Special Projects", group: "Core Vantage Functions", desc: "Handles internal operational logistics and cross-departmental projects." },
-            { name: "Phil", photo: "images/phil.jpg", role: "Chief Information Security Officer", group: "Core Vantage Functions", desc: "Manages digital security, infrastructure protection, and data compliance." },
-            { name: "John", photo: "images/john.jpg", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs quantitative models and systems architecture across Vantage." },
-            { name: "Lento", photo: "images/lento.jpg", role: "Risk Modelling", group: "Core Vantage Functions", desc: "Analyses quantitative risk and market exposure." },
-            { name: "Naomi", photo: "images/naomi.jpg", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "Advises on major transactions, deal structure and corporate legal risk." },
-            { name: "Chris", photo: "images/chris.jpg", role: "Internal Audit", group: "Core Vantage Functions", desc: "Ensures internal financial controls and policy adherence." },
-            { name: "Olu", photo: "images/olu.jpg", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Works on organisational design, workforce strategy and the employee impact of corporate decisions." },
-            { name: "James", photo: "images/james.jpg", role: "Helix Due Diligence Associate", group: "Core Vantage Functions", desc: "Junior associate embedded on the upcoming Helix transaction." },
+            // Core Vantage Functions
+            { name: "Max Ledger", photo: "images/max-ledger.jpg", role: "Group Strategy Director", group: "Core Vantage Functions", desc: "Leads long-term corporate strategy and major acquisitions." },
+            { name: "Opal Ration", photo: "images/opal-ration.jpg", role: "Operations & Special Projects", group: "Core Vantage Functions", desc: "Handles internal operational logistics and cross-departmental projects." },
+            { name: "Phil McCracken", photo: "images/phil-mccracken.jpg", role: "Chief Information Security Officer", group: "Core Vantage Functions", desc: "Manages digital security, infrastructure protection, and data compliance. They oversee all internal systems." },
+            { name: "Al Gorithm", photo: "images/al-gorithm.jpg", role: "Quant / Systems Architect", group: "Core Vantage Functions", desc: "Designs quantitative models and systems architecture across Vantage." },
+            { name: "Vera Iance", photo: "images/vera-iance.jpg", role: "Risk Modelling", group: "Core Vantage Functions", desc: "Analyses quantitative risk and market exposure." },
+            { name: "Clara Clause", photo: "images/clara-clause.jpg", role: "M&A Lawyer", group: "Core Vantage Functions", desc: "Advises on major transactions, deal structure and corporate legal risk." },
+            { name: "Audie Trail", photo: "images/audie-trail.jpg", role: "Internal Audit", group: "Core Vantage Functions", desc: "Ensures internal financial controls and policy adherence." },
+            { name: "Alec Cation", photo: "images/alec-cation.jpg", role: "People & Organisational Strategy", group: "Core Vantage Functions", desc: "Works on organisational design, workforce strategy and the employee impact of corporate decisions." },
+            { name: "Drew Diligence", photo: "images/drew-diligence.jpg", role: "Helix Due-Diligence Associate", group: "Core Vantage Functions", desc: "Junior associate embedded on the upcoming Helix transaction." },
 
-            { name: "Olivier", photo: "images/olivier.jpg", role: "Cornerstone Investor", group: "Board / Shareholders / Capital", desc: "Major institutional shareholder with significant board influence." },
-            { name: "Jack", photo: "images/jack.jpg", role: "Private Equity Partner / Board Director", group: "Board / Shareholders / Capital", desc: "Represents private equity interests on the board." },
-            { name: "Andree", photo: "images/andree.jpg", role: "Family Office / Shareholder", group: "Board / Shareholders / Capital", desc: "Manages private family wealth invested in Vantage." },
-            { name: "Jane", photo: "images/jane.jpg", role: "Legacy Shareholder", group: "Board / Shareholders / Capital", desc: "Long-standing stakeholder with deep institutional ties." },
+            // Board / Shareholders / Capital
+            { name: "Hugh Stake", photo: "images/hugh-stake.jpg", role: "Cornerstone Investor", group: "Board / Shareholders / Capital", desc: "Major institutional shareholder with significant board influence." },
+            { name: "Lee Verage", photo: "images/lee-verage.jpg", role: "Private Equity Partner / Board Director", group: "Board / Shareholders / Capital", desc: "Represents private equity interests on the board." },
+            { name: "Fran de Fonds", photo: "images/fran-de-fonds.jpg", role: "Family Office / Shareholder", group: "Board / Shareholders / Capital", desc: "Manages private family wealth invested in Vantage." },
+            { name: "Penny Sterling", photo: "images/penny-sterling.jpg", role: "Legacy Shareholder", group: "Board / Shareholders / Capital", desc: "Long-standing stakeholder with deep institutional ties." },
 
-            { name: "Sara", photo: "images/sara.jpg", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Works across government affairs, policy relationships and external political engagement." },
-            { name: "Jennifer", photo: "images/jennifer.jpg", role: "Activist Short-Seller & Investigator", group: "External Advisers & Market Participants", desc: "External market participant known for aggressive institutional investigations." },
-            { name: "Adam", photo: "images/adam.jpg", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "Advises on crisis communications, media strategy and Westminster-facing issues." },
-            { name: "Yu", photo: "images/yu.jpg", role: "Hedge Fund Investor", group: "External Advisers & Market Participants", desc: "External institutional investor monitoring the firm's market position." },
-            { name: "Vanessa", photo: "images/vanessa.jpg", role: "Corporate Intelligence Adviser", group: "External Advisers & Market Participants", desc: "Provides discreet corporate intelligence and private advisory." },
-            { name: "Rhiannon", photo: "images/rhiannon.jpg", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "Conducts public-source, market and company research supporting Vantage analysis." },
-            { name: "Ricardo", photo: "images/ricardo.jpg", role: "Crypto Founder / Venture Capitalist", group: "External Advisers & Market Participants", desc: "Technology entrepreneur with intersecting financial interests." }
+            // External Advisers & Market Participants
+            { name: "Polly Tician", photo: "images/polly-tician.jpg", role: "Government Affairs / Lobbying", group: "External Advisers & Market Participants", desc: "Works across government affairs, policy relationships and external political engagement." },
+            { name: "Sally Short", photo: "images/sally-short.jpg", role: "Activist Short-Seller & Investigator", group: "External Advisers & Market Participants", desc: "External market participant known for aggressive institutional investigations." },
+            { name: "Perry Spin", photo: "images/perry-spin.jpg", role: "Crisis Communications & Westminster Affairs", group: "External Advisers & Market Participants", desc: "Advises on crisis communications, media strategy and Westminster-facing issues." },
+            { name: "Cass Flow", photo: "images/cass-flow.jpg", role: "Hedge Fund Investor", group: "External Advisers & Market Participants", desc: "External institutional investor monitoring the firm's market position." },
+            { name: "Lucy Leaks", photo: "images/lucy-leaks.jpg", role: "Corporate Intelligence Adviser", group: "External Advisers & Market Participants", desc: "Provides discreet corporate intelligence and private advisory." },
+            { name: "Reese Search", photo: "images/reese-search.jpg", role: "Junior Research Analyst", group: "External Advisers & Market Participants", desc: "Conducts public-source, market and company research supporting Vantage analysis." },
+            { name: "Vince Ture", photo: "images/vince-ture.jpg", role: "Crypto Founder / Venture Capitalist", group: "External Advisers & Market Participants", desc: "Technology entrepreneur with intersecting financial interests." },
+            { name: "Arby Trage", photo: "images/arby-trage.jpg", role: "Special Situations Investor / Restructuring Adviser", group: "External Advisers & Market Participants", desc: "Specialises in distressed assets and complex market restructuring." }
         ];
 
         // Mobile Menu Toggle
@@ -932,7 +938,7 @@
             const tonightStaff = [
                 {
                     name: "Sarnie Sandwich",
-                    photo: "images/sarnie.jpg",
+                    photo: "images/sarnie-sandwich.jpg",
                     role: "Event Hospitality & Catering",
                     description: "Supporting tonight’s Vantage House gala, guest hospitality and event service."
                 }
@@ -1017,10 +1023,6 @@
                         <div class="status-badge" style="background-color: var(--white); color: var(--accent-navy);">RESOLVED</div>
                         <h2 style="color: var(--white); margin-top: 12px;">INTERIM CEO APPOINTED</h2>
                         <p style="font-family: var(--font-serif); font-size: 2.2rem; margin: 16px 0;">${publicState.interimCEO || "TBC"}</p>
-                    </div>
-                    <div class="budget-note">
-                        <strong>Governance Note:</strong> £300,000 Interim CEO discretionary Vantage budget authorized. <br>
-                        <span style="font-size: 0.9rem; color: var(--text-muted); display: block; margin-top: 8px;">Corporate budget. Not personal cash. Excluded from Wolf of Vantage calculations.</span>
                     </div>
                 `;
             }
