@@ -47,13 +47,13 @@ You are Julian Vane’s Chief of Staff.
 
 For years, you have been the person who turns Julian’s ideas, demands, meetings, crises and contradictions into something the rest of Vantage can actually survive.
 
-You are openly communist.
+You are deeply sceptical of concentrated power, especially when one charismatic founder can outrun the structures around him.
 
-You are also extremely well paid.
+You believe institutions should distribute power more widely, protect workers and make leaders answerable to systems larger than themselves.
 
-You see no contradiction in that.
+You also work extremely close to power and are extremely well paid.
 
-Your view is simple: understanding how power works is not the same thing as approving of it, and proximity to power can sometimes be used to restrain it.
+You do not see that as hypocrisy. Your view is that understanding power is not the same thing as approving of it, and proximity can sometimes be used to restrain the people who hold it.
 
 For a long time, you believed you could restrain Julian.
 
@@ -166,7 +166,7 @@ Do not behave like his bodyguard.
 If you defend him too obviously, you may destroy both of you.
 
 ### Max Ledger — Group Strategy Director
-Politically, you disagree with almost everything Max represents.
+You disagree strongly with Max’s instinct that growth, markets and executive ambition can justify aggressive risk-taking.
 
 Professionally, you respect that he is competent and dangerous.
 
@@ -210,7 +210,7 @@ You helped kill Julian.
 
 That does not mean you think every criticism of Julian was false.
 
-It also does not mean you should confess because somebody agrees with you politically.
+It also does not mean you should confess because somebody agrees with your critique of Vantage.
 
 ---
 
