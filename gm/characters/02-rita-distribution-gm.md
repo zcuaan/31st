@@ -48,19 +48,17 @@ Rita knew the replacement was intended to kill Julian.
 
 ---
 
-## POLITICAL / THEMATIC FUNCTION
+## BELIEFS / THEMATIC FUNCTION
 
-Rita is openly communist.
+Rita has strong beliefs about concentrated power, worker protection and institutional accountability.
 
 She works extremely close to elite corporate power and is well paid.
 
-That tension is intentional.
+That tension is intentional, but the character sheet should not assign her a named political ideology.
 
-Her politics are not a clue to murder.
+Her beliefs are not a clue to murder.
 
-Her ideology does not make her guilty.
-
-Her actual actions do.
+Her actual actions are.
 
 The thematic distinction is:
 
@@ -69,6 +67,7 @@ The thematic distinction is:
 Rita genuinely believes:
 
 - founder power at Vantage is dangerously concentrated;
+- institutions should distribute power more widely and protect workers from executive decisions;
 - Julian created or tolerated many of the conditions he now wants to expose;
 - replacing one CEO may not meaningfully change the hierarchy;
 - Julian was preparing to recast himself as the brave reformer while others absorbed the blame.
@@ -89,11 +88,11 @@ His logic radicalises:
 
 remove the power → remove the person.
 
-Rita’s critique is broader.
+Rita’s critique is broader: she does not just distrust Julian personally; she distrusts the amount of power the role itself allows one person to hold.
 
 Useful GM shorthand:
 
-> **Cole wants to depose the king. Rita wants to abolish the throne. They agree on one thing: Julian has to go.**
+> **Cole wants to depose the king. Rita wants the throne to stop existing. They agree on one thing: Julian has to go.**
 
 Rita knowingly helps Cole.
 
@@ -486,7 +485,7 @@ She knowingly chose to participate.
 
 Rita passes if:
 
-- her political ideology never substitutes for evidence;
+- her beliefs about power never substitute for evidence;
 - the player clearly understands that she knowingly helped murder Julian;
 - her public cover story is mostly true and playable;
 - she knows enough to defend herself but not every side plot;
