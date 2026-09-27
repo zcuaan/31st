@@ -302,7 +302,7 @@
 
     <canvas id="rain-canvas"></canvas>
 
-    <!-- FIXED PASSWORD OVERLAY (Now outside the main content flow) -->
+    <!-- FIXED PASSWORD OVERLAY -->
     <div id="password-overlay">
         <div class="modal-box">
             <button class="close-modal" onclick="closePassword()">✕</button>
@@ -2241,9 +2241,8 @@ Give the room the timeline fact or record mismatch you think everybody should ha
         });
 
         /*
-         * 3. MARKDOWN PARSER & DATA EXTRACTOR
+         * 3. BULLETPROOF MARKDOWN PARSER & DATA EXTRACTOR
          */
-        const rawMarkdown = document.getElementById('raw-markdown-data').textContent;
         const characterDataMap = {}; 
 
         function parseMarkdown(md) {
@@ -2255,20 +2254,37 @@ Give the room the timeline fact or record mismatch you think everybody should ha
             html = html.replace(/`(.*?)`/gim, '<code>$1</code>');
             html = html.replace(/<mark>(.*?)<\/mark>/gim, '<mark>$1</mark>');
             html = html.replace(/^\- (.*$)/gim, '<ul><li>$1</li></ul>');
-            html = html.replace(/<\/ul>\n<ul>/gim, '\n'); 
+            html = html.replace(/<\/ul>\s*<ul>/gim, ''); 
             html = html.replace(/^---/gim, '<hr>');
-            html = html.replace(/\n\n/gim, '<br><br>');
+            html = html.replace(/\r?\n\r?\n/gim, '<br><br>');
             return html;
         }
 
-        const sections = rawMarkdown.split(/# \d{2} — /);
-        sections.forEach(section => {
-            if (section.trim() === '') return;
-            const lines = section.trim().split('\n');
-            const name = lines[0].trim(); 
-            const content = section.substring(lines[0].length).trim();
-            characterDataMap[name] = parseMarkdown(content);
-        });
+        // Line-by-line parser to prevent line-ending and dash-encoding issues
+        (function buildCharacterMap() {
+            const rawMarkdown = document.getElementById('raw-markdown-data').textContent;
+            const lines = rawMarkdown.split(/\r?\n/);
+            let currentName = null;
+            let currentBuffer = [];
+
+            lines.forEach(line => {
+                // Matches header like "# 01 — Max Ledger" or "# Max Ledger" with any dash variant
+                const headerMatch = line.match(/^#\s*(?:\d{1,2}\s*[—\–\-]\s*)?(.+)$/);
+                if (headerMatch) {
+                    if (currentName && currentBuffer.length > 0) {
+                        characterDataMap[currentName] = parseMarkdown(currentBuffer.join('\n'));
+                    }
+                    currentName = headerMatch[1].trim();
+                    currentBuffer = [];
+                } else if (currentName !== null) {
+                    currentBuffer.push(line);
+                }
+            });
+
+            if (currentName && currentBuffer.length > 0) {
+                characterDataMap[currentName] = parseMarkdown(currentBuffer.join('\n'));
+            }
+        })();
 
         /*
          * 4. APP LOGIC (UI & Transitions)
