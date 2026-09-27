@@ -301,22 +301,20 @@
         ----------------------------------------- */
 
         #password-overlay {
-            position: absolute;
+            position: fixed;
             inset: 0;
 
             display: none;
 
-            z-index: 20;
+            z-index: 100;
 
-            min-height: 100%;
+            width: 100vw;
+            height: 100vh;
 
-            padding: 40px;
+            background: rgba(0, 0, 0, 0.4);
 
-            background:
-                rgba(247, 247, 245, 0.92);
-
-            backdrop-filter: blur(9px);
-            -webkit-backdrop-filter: blur(9px);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
 
             justify-content: center;
             align-items: center;
@@ -327,60 +325,53 @@
         }
 
         .password-panel {
-            width: min(100%, 330px);
-
+            background: var(--bg-color);
+            border: 1px solid rgba(55, 53, 47, 0.2);
+            border-radius: 12px;
+            padding: 30px 40px;
+            width: 90%;
+            max-width: 350px;
             text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .password-panel h3 {
             margin-bottom: 5px;
-
             font-size: 1.25rem;
         }
 
         .password-description {
             color: var(--text-muted);
-
             font-size: 0.84rem;
         }
 
         .pwd-input {
             width: 100%;
-
             margin-top: 18px;
             margin-bottom: 10px;
-
             padding: 11px 13px;
-
             border: 1px solid rgba(55, 53, 47, 0.2);
             border-radius: 6px;
-
             outline: none;
-
-            background:
-                rgba(255, 255, 255, 0.95);
-
+            background: rgba(255, 255, 255, 0.95);
             color: var(--text-main);
         }
 
         .pwd-input:focus {
-            border-color:
-                rgba(55, 53, 47, 0.45);
+            border-color: rgba(55, 53, 47, 0.45);
         }
 
         .pwd-btn {
             width: 100%;
-
             padding: 10px 16px;
-
             border: 0;
             border-radius: 6px;
-
             background: var(--text-main);
             color: white;
-
             font-weight: 650;
-
             cursor: pointer;
         }
 
@@ -390,11 +381,8 @@
 
         #pwd-error {
             display: none;
-
             margin-top: 10px;
-
             color: var(--danger);
-
             font-size: 0.84rem;
         }
 
@@ -627,7 +615,7 @@
                 margin-top: 3px;
             }
 
-            #password-overlay {
+            .password-panel {
                 padding: 25px;
             }
 
@@ -646,61 +634,60 @@
 
     <canvas id="rain-canvas"></canvas>
 
+    <!-- =====================================
+         FIXED PASSWORD OVERLAY
+    ====================================== -->
+
+    <div id="password-overlay">
+
+        <div class="password-panel">
+
+            <h3 id="pwd-character-name">
+                Character Name
+            </h3>
+
+            <p class="password-description">
+                Enter authorisation key
+            </p>
+
+            <input
+                type="password"
+                id="pwd-input"
+                class="pwd-input"
+                placeholder="Password"
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                class="pwd-btn"
+                onclick="checkPassword()"
+            >
+                Access File
+            </button>
+
+            <button
+                type="button"
+                class="back-btn cancel-btn"
+                onclick="closePassword()"
+            >
+                Cancel
+            </button>
+
+            <p id="pwd-error">
+                Access denied.
+            </p>
+
+        </div>
+
+    </div>
+
     <div id="app">
 
         <main
             class="glass-box"
             id="main-card"
         >
-
-            <!-- =====================================
-                 PASSWORD OVERLAY
-            ====================================== -->
-
-            <div id="password-overlay">
-
-                <div class="password-panel">
-
-                    <h3 id="pwd-character-name">
-                        Character Name
-                    </h3>
-
-                    <p class="password-description">
-                        Enter authorisation key
-                    </p>
-
-                    <input
-                        type="password"
-                        id="pwd-input"
-                        class="pwd-input"
-                        placeholder="Password"
-                        autocomplete="off"
-                    >
-
-                    <button
-                        type="button"
-                        class="pwd-btn"
-                        onclick="checkPassword()"
-                    >
-                        Access File
-                    </button>
-
-                    <button
-                        type="button"
-                        class="back-btn cancel-btn"
-                        onclick="closePassword()"
-                    >
-                        Cancel
-                    </button>
-
-                    <p id="pwd-error">
-                        Access denied.
-                    </p>
-
-                </div>
-
-            </div>
-
 
             <!-- =====================================
                  MAIN DIRECTORY VIEW
