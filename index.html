@@ -38,7 +38,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0; /* Fixed: Moved above the body background */
+            z-index: 0; 
             pointer-events: none;
         }
 
@@ -49,7 +49,7 @@
             display: flex;
             justify-content: center;
             padding: 40px 20px;
-            z-index: 10; /* Fixed: Keeps the interactive box above the canvas */
+            z-index: 10; 
         }
 
         .glass-box {
@@ -190,22 +190,52 @@
             font-size: 1.2rem;
         }
 
-        /* Password Modal */
+        /* Fixed Centered Password Modal */
         #password-overlay {
             display: none;
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(4px);
-            border-radius: 12px;
+            -webkit-backdrop-filter: blur(4px);
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            z-index: 10;
+            z-index: 100;
         }
 
         #password-overlay.active {
             display: flex;
+        }
+
+        .modal-box {
+            background: var(--bg-color);
+            border: 1px solid rgba(55, 53, 47, 0.2);
+            border-radius: 12px;
+            padding: 30px 40px;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: var(--text-main);
         }
 
         .pwd-input {
@@ -214,21 +244,21 @@
             border-radius: 6px;
             font-family: inherit;
             font-size: 1rem;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            width: 80%;
-            max-width: 250px;
-            background: rgba(255,255,255,0.9);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            width: 100%;
+            background: #ffffff;
         }
 
         .pwd-btn {
-            padding: 8px 16px;
+            padding: 10px 16px;
             background: var(--text-main);
             color: white;
             border: none;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
+            width: 100%;
         }
 
         /* Markdown Profile Styles */
@@ -272,18 +302,21 @@
 
     <canvas id="rain-canvas"></canvas>
 
+    <!-- FIXED PASSWORD OVERLAY (Now outside the main content flow) -->
+    <div id="password-overlay">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closePassword()">✕</button>
+            <h3 id="pwd-character-name">Character Name</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Enter authorization key</p>
+            <input type="password" id="pwd-input" class="pwd-input" placeholder="Password...">
+            <button class="pwd-btn" onclick="checkPassword()">Access File</button>
+            <p id="pwd-error" style="color: #e03e3e; font-size: 0.85rem; margin-top: 10px; display: none;">Access denied.</p>
+        </div>
+    </div>
+
     <div id="app">
         <div class="glass-box" id="main-card">
             
-            <div id="password-overlay">
-                <h3 id="pwd-character-name">Character Name</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Enter authorization key</p>
-                <input type="password" id="pwd-input" class="pwd-input" placeholder="Password...">
-                <button class="pwd-btn" onclick="checkPassword()">Access File</button>
-                <button class="back-btn" style="margin-top: 15px;" onclick="closePassword()">Cancel</button>
-                <p id="pwd-error" style="color: #e03e3e; font-size: 0.85rem; margin-top: 10px; display: none;">Access denied.</p>
-            </div>
-
             <div id="standard-view">
                 <header>
                     <h1 class="title">Murder Mysteyr Night</h1>
@@ -622,11 +655,13 @@ At about **16:55** you deliberately triggered the security-visibility disruption
 
             profileContent.innerHTML = contentHTML;
             profileView.classList.add('active');
+            window.scrollTo(0, 0); // Scroll to top when opening a profile
         }
 
         function backToDirectory() {
             document.getElementById('profile-view').classList.remove('active');
             document.getElementById('standard-view').style.display = 'block';
+            window.scrollTo(0, 0); // Scroll to top when going back to directory
         }
     </script>
 </body>
