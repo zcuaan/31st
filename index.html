@@ -38,7 +38,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -1;
+            z-index: 0; /* Fixed: Moved above the body background */
             pointer-events: none;
         }
 
@@ -49,12 +49,12 @@
             display: flex;
             justify-content: center;
             padding: 40px 20px;
-            z-index: 1;
+            z-index: 10; /* Fixed: Keeps the interactive box above the canvas */
         }
 
         .glass-box {
             width: 100%;
-            max-width: 650px; /* Kept narrow for background visibility */
+            max-width: 650px; 
             background: var(--glass-bg);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
@@ -77,8 +77,8 @@
             font-size: 2rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: -0.05em; /* Tighter letter spacing */
-            margin-bottom: 0px; /* Closer together */
+            letter-spacing: -0.05em; 
+            margin-bottom: 0px; 
             line-height: 1.1;
         }
 
@@ -86,7 +86,7 @@
             font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: -0.02em; /* Tighter letter spacing */
+            letter-spacing: -0.02em; 
             color: var(--text-muted);
             margin-top: 5px;
         }
@@ -275,7 +275,6 @@
     <div id="app">
         <div class="glass-box" id="main-card">
             
-            <!-- Password Overlay inside the box -->
             <div id="password-overlay">
                 <h3 id="pwd-character-name">Character Name</h3>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Enter authorization key</p>
@@ -285,7 +284,6 @@
                 <p id="pwd-error" style="color: #e03e3e; font-size: 0.85rem; margin-top: 10px; display: none;">Access denied.</p>
             </div>
 
-            <!-- Standard View (Header + Nav) -->
             <div id="standard-view">
                 <header>
                     <h1 class="title">Murder Mysteyr Night</h1>
@@ -317,7 +315,6 @@
                 </div>
             </div>
 
-            <!-- Character Profile View -->
             <div id="profile-view" class="profile-view">
                 <button class="back-btn" onclick="backToDirectory()">← Back to Directory</button>
                 <div id="profile-content" class="md-content">
@@ -328,7 +325,6 @@
         </div>
     </div>
 
-    <!-- Hidden element holding the RAW Markdown Data -->
     <script type="text/markdown" id="raw-markdown-data">
 # 01 — Max Ledger
 **Player:** Josh
@@ -392,9 +388,9 @@ At about **16:55** you deliberately triggered the security-visibility disruption
 
     <script>
         /* 
-         * 1. RAINING £ CANVAS EFFECT (Fixed Window Load)
+         * 1. RAINING £ CANVAS EFFECT
          */
-        window.addEventListener('load', () => {
+        (function initCanvas() {
             const canvas = document.getElementById('rain-canvas');
             const ctx = canvas.getContext('2d');
             let width, height;
@@ -405,7 +401,7 @@ At about **16:55** you deliberately triggered the security-visibility disruption
                 height = canvas.height = window.innerHeight;
             }
             window.addEventListener('resize', resize);
-            resize(); // Initial sizing after load
+            resize(); 
 
             class Symbol {
                 constructor() {
@@ -414,9 +410,9 @@ At about **16:55** you deliberately triggered the security-visibility disruption
                 reset(initial = false) {
                     this.x = Math.random() * width;
                     this.y = initial ? Math.random() * height : -20;
-                    this.size = Math.random() * 10 + 10; // 10px to 20px
-                    this.speed = Math.random() * 1.5 + 0.5; // Slow, falling like snow
-                    this.opacity = Math.random() * 0.5 + 0.3; // Solid enough to see
+                    this.size = Math.random() * 10 + 10; 
+                    this.speed = Math.random() * 1.5 + 0.5; 
+                    this.opacity = Math.random() * 0.5 + 0.3; 
                 }
                 update() {
                     this.y += this.speed;
@@ -431,7 +427,6 @@ At about **16:55** you deliberately triggered the security-visibility disruption
                 }
             }
 
-            // Create rain density based on screen width
             const density = Math.floor(window.innerWidth / 15);
             for (let i = 0; i < density; i++) {
                 symbols.push(new Symbol());
@@ -446,7 +441,7 @@ At about **16:55** you deliberately triggered the security-visibility disruption
                 requestAnimationFrame(animate);
             }
             animate();
-        });
+        })();
 
         /*
          * 2. DIRECTORY STRUCTURE & PASSWORDS
@@ -506,7 +501,6 @@ At about **16:55** you deliberately triggered the security-visibility disruption
             }
         ];
 
-        // Passwords (defaulting to first name lowercase)
         const passwords = {};
         directoryStructure.forEach(dept => {
             dept.members.forEach(member => {
@@ -519,9 +513,8 @@ At about **16:55** you deliberately triggered the security-visibility disruption
          * 3. MARKDOWN PARSER & DATA EXTRACTOR
          */
         const rawMarkdown = document.getElementById('raw-markdown-data').textContent;
-        const characterDataMap = {}; // Will map "Max Ledger" -> "<parsed html profile>"
+        const characterDataMap = {}; 
 
-        // Very simple custom markdown parser for this specific document structure
         function parseMarkdown(md) {
             let html = md;
             html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
@@ -531,18 +524,17 @@ At about **16:55** you deliberately triggered the security-visibility disruption
             html = html.replace(/`(.*?)`/gim, '<code>$1</code>');
             html = html.replace(/<mark>(.*?)<\/mark>/gim, '<mark>$1</mark>');
             html = html.replace(/^\- (.*$)/gim, '<ul><li>$1</li></ul>');
-            html = html.replace(/<\/ul>\n<ul>/gim, '\n'); // fix consecutive list items
+            html = html.replace(/<\/ul>\n<ul>/gim, '\n'); 
             html = html.replace(/^---/gim, '<hr>');
             html = html.replace(/\n\n/gim, '<br><br>');
             return html;
         }
 
-        // Split the giant text by "# 01 — ", "# 02 — " etc.
         const sections = rawMarkdown.split(/# \d{2} — /);
         sections.forEach(section => {
             if (section.trim() === '') return;
             const lines = section.trim().split('\n');
-            const name = lines[0].trim(); // Extract the name from the first line
+            const name = lines[0].trim(); 
             const content = section.substring(lines[0].length).trim();
             characterDataMap[name] = parseMarkdown(content);
         });
@@ -552,7 +544,6 @@ At about **16:55** you deliberately triggered the security-visibility disruption
          */
         let currentTargetCharacter = "";
 
-        // Build Directory HTML
         const charContainer = document.getElementById('characters');
         directoryStructure.forEach(dept => {
             const deptDiv = document.createElement('div');
@@ -613,7 +604,6 @@ At about **16:55** you deliberately triggered the security-visibility disruption
             }
         }
 
-        // Allow 'Enter' key in password box
         document.getElementById('pwd-input').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 checkPassword();
@@ -625,7 +615,6 @@ At about **16:55** you deliberately triggered the security-visibility disruption
             const profileView = document.getElementById('profile-view');
             const profileContent = document.getElementById('profile-content');
             
-            // Check if we parsed data for this character, otherwise show a placeholder
             let contentHTML = characterDataMap[characterName];
             if (!contentHTML) {
                 contentHTML = `<h1>${characterName}</h1><p>Profile data not found in system.</p>`;
