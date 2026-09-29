@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -714,6 +715,14 @@
                     <button
                         type="button"
                         class="active"
+                        data-tab="welcome"
+                        onclick="switchTab('welcome', this)"
+                    >
+                        Welcome
+                    </button>
+
+                    <button
+                        type="button"
                         data-tab="characters"
                         onclick="switchTab('characters', this)"
                     >
@@ -732,8 +741,104 @@
 
 
                 <section
+    id="welcome"
+    class="tab-content active"
+>
+    <div class="md-content">
+
+        <h2>
+            Welcome to the Vantage Gala
+        </h2>
+
+        <p>
+            Tonight, Vantage CEO <strong>Julian Vane (Xuan Hou)</strong>
+            will host the company’s annual gala and make an important
+            announcement about the future of Vantage.
+        </p>
+
+        <p>
+            Come prepared to meet your colleagues, protect your interests
+            and pay attention to what happens around you.
+        </p>
+
+        <h3>
+            Timings
+        </h3>
+
+        <ul>
+            <li><strong>4:30pm</strong> — Gala formally begins</li>
+            <li><strong>5:30pm</strong> — Welcome speech &amp; announcement from Julian Vane</li>
+            <li><strong>10:00pm</strong> — Gala concludes</li>
+            <li><strong>10:10pm</strong> — Award ceremony 🏆</li>
+            <li><strong>10:15pm</strong> — Cake 🎂</li>
+        </ul>
+
+        <h3>
+            Food &amp; Drink
+        </h3>
+
+        <ul>
+            <li>Food will be served during the evening</li>
+            <li>Drinks will be available throughout</li>
+            <li>See the <strong>Menu</strong> tab for details</li>
+        </ul>
+
+        <h3>
+            When You Arrive
+        </h3>
+
+        <ul>
+            <li>Arrive <strong>in character</strong></li>
+            <li>
+                You’ll receive an envelope containing your printed character sheet,
+                any starting items belonging to your character and your starting Vantage money
+            </li>
+            <li>
+                The game is live from the moment you arrive — pay attention to
+                conversations, behaviour and anything that seems suspicious 👀
+            </li>
+        </ul>
+
+        <h3>
+            Through the Night
+        </h3>
+
+        <p>
+            Expect:
+        </p>
+
+        <ul>
+            <li>a <strong>live murder</strong></li>
+            <li>evidence &amp; investigation</li>
+            <li>puzzles</li>
+            <li>secrets</li>
+            <li>deals &amp; trading</li>
+            <li>some very serious corporate negotiations</li>
+            <li>a succession battle</li>
+            <li>questionable decision-making</li>
+        </ul>
+
+        <p>
+            You do not need to solve everything yourself.
+            <strong>Your own character goals matter too.</strong>
+        </p>
+
+        <p>
+            🏆 <strong>There will be trophies.</strong>
+        </p>
+
+        <p>
+            Use the <strong>Characters</strong> tab to access your private file
+            and the <strong>Menu</strong> tab for food and drinks.
+        </p>
+
+    </div>
+</section>
+
+
+                <section
                     id="characters"
-                    class="tab-content active"
+                    class="tab-content"
                 >
                     <p class="loading">
                         Loading character directory…
