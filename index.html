@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -830,13 +831,8 @@
            casually opening another character's page, but they are
            NOT genuine server-side authentication.
 
-           Current rule:
-           character first name, lowercase
-
-           Max Ledger -> max
-           Rita Distribution -> rita
-           Hugh Stake -> hugh
-           etc.
+           Each character has a unique single-word authorisation key.
+           Password entry is case-insensitive.
         ========================================================== */
 
 
@@ -1213,25 +1209,35 @@
            3. PASSWORDS
         ========================================================== */
 
-        const passwords = {};
-
-
-        directoryStructure.forEach(department => {
-
-            department.members.forEach(member => {
-
-                const firstName =
-                    member.name
-                        .split(" ")[0]
-                        .toLowerCase();
-
-                passwords[member.name] =
-                    firstName;
-
-            });
-
-        });
-
+        const passwords = {
+            "Max Ledger": "willow",
+            "Rita Distribution": "maple",
+            "Opal Ration": "anchor",
+            "Perry Spin": "fern",
+            "Polly Tician": "acorn",
+            "Alec Cation": "tulip",
+            "Cole Control": "blossom",
+            "Phil McCracken": "flamingo",
+            "Al Gorithm": "kiwi",
+            "Vera Iance": "robin",
+            "Audie Trail": "stone",
+            "Clara Clause": "badger",
+            "Reese Search": "quartz",
+            "Drew Diligence": "ginger",
+            "Finn Dings": "saffron",
+            "Archie Vist": "river",
+            "Hugh Stake": "fossil",
+            "Penny Sterling": "birch",
+            "Lee Verage": "heron",
+            "Cass Flow": "meadow",
+            "Fran de Fonds": "mocha",
+            "Cal Lateral": "honey",
+            "Vince Ture": "juniper",
+            "Arby Trage": "raven",
+            "Lucy Leaks": "dolphin",
+            "Gus Sip": "wren",
+            "Sally Short": "sunset"
+        };
 
 
         /* ==========================================================
