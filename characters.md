@@ -147,7 +147,7 @@ Choose your ending: protect Cole, betray Cole, confess your own choice, or make 
 
 # 03 — Polly Tician
 
-**Player:** Sara Brimble
+**Player:** Julio
 **Government Affairs / Lobbying**
 Polished · Persuasive · Politically connected
 
