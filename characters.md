@@ -1657,7 +1657,17 @@ Your private assignment from Julian is itself sensitive. If you announce it too 
 
 ### Cross-Check
 
-Once tonight, choose **two eligible evidence items already in play**. Give both IDs/items to the GM. The GM returns one of three answers: **same story/timeline**, **meaningful contradiction**, or **cannot genuinely be compared**. It does not identify a liar or killer for you.
+Once tonight, choose **one claim made by another player** and **one piece of evidence already in play** that could reasonably test that claim.
+
+Give both to the GM.
+
+The GM tells you whether the evidence:
+
+- **supports the claim**
+- **creates a meaningful contradiction**
+- **does not prove either way**
+
+This power tests a specific story against the evidence. It does **not** force another player to tell the truth, reveal unreleased evidence, or identify the killer for you.
 
 ## Starting items
 
