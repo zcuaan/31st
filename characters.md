@@ -184,9 +184,17 @@ At about **16:40**, you deliberately put fictional **Aster-9** into Julian’s c
 
 ## Your power
 
-### Political Contact
+### Call a Contact
 
-Once tonight, choose one currently released political/public-affairs item, fictional organisation, event or named actor referenced in released evidence. The GM gives you the prepared public/political context. You may trade or reveal it.
+Once tonight, choose one **political actor, organisation, public-affairs issue or event already in play** and ask the GM **one specific factual question** about it.
+
+If the question could reasonably be answered through your political contacts, the GM gives you a prepared private answer.
+
+If your contacts would not know, you receive **no useful information**.
+
+You may keep, trade, sell or reveal what you learn.
+
+This power cannot reveal unreleased murder evidence or identify the killer for you.
 
 ## Starting items
 
@@ -856,9 +864,21 @@ You have no hidden murder crime. Your private satisfaction is that the crisis ma
 
 ## Your power
 
-### Risk Model
+### Stress Test
 
-Once tonight, choose one currently released financial, modelling or risk item. The GM gives you the prepared cautious-case assumptions/sensitivity context in plain English.
+Once tonight, choose **one financial, modelling or risk claim already in play.**
+
+Give the claim and any relevant released evidence to the GM.
+
+The GM tells you the **single biggest assumption, weakness or failure point** behind that claim and whether the conclusion appears:
+
+- robust
+- fragile
+- not possible to judge from the current evidence
+
+You may keep, trade or reveal the result.
+
+This power tests the strength of a conclusion; it does not tell you whether somebody deliberately manipulated it.
 
 ## Starting items
 
@@ -1056,9 +1076,19 @@ Your family office carries the aura of old money and patient capital. The realit
 
 ## Your power
 
-### Family Office Access
+### Beneficial Ownership
 
-Once tonight, choose one currently released exposure directly involving your family office. The GM gives you the prepared ownership/collateral/pressure context. You may use or trade it.
+Once tonight, choose **one company, asset, loan, investment or financing arrangement already in play.**
+
+The GM gives you the prepared ownership/exposure chain showing, where the records allow:
+
+- who ultimately owns or controls it;
+- who is financially exposed to it;
+- and who would be affected if it failed.
+
+You may keep, trade, sell or reveal the result.
+
+This power cannot reveal hidden murder evidence.
 
 ## Starting items
 
@@ -1322,9 +1352,17 @@ You have no murder secret. <mark>At about 16:59 you were with Cole Control and H
 
 ## Your power
 
-### Legacy Access
+### Stewardship Test
 
-Once tonight, choose one currently released governance, ownership or historic Vantage item. The GM gives you the prepared historical/legacy context behind it.
+Once succession opens, choose **one CEO candidate and one governance or stewardship issue.**
+
+Ask that candidate one short public question.
+
+They must give a brief public answer and state **one concrete commitment** they would make if appointed Interim CEO.
+
+That commitment becomes part of their public succession position and may be quoted, traded on or used against them later.
+
+This power cannot force the candidate to reveal a private secret or unreleased evidence.
 
 ## Starting items
 
@@ -1457,7 +1495,15 @@ You **knowingly commissioned Opal to obtain confidential Helix information**. Yo
 
 ### Deal Flow
 
-Once tonight, choose one currently released corporate/financial evidence item. The GM gives you the prepared commercial/deal-value context: who might want it and why.
+Once tonight, choose one **portable corporate or financial evidence item currently in your possession.**
+
+Give it to the GM.
+
+The GM privately tells you **up to two people in the room with the strongest plausible commercial reason to want that information**, and why it could matter to them.
+
+You keep the item unless you choose to sell, trade or give it away.
+
+This power identifies potential buyers. It does not reveal their private secrets or force them to make a deal.
 
 ## Starting items
 
