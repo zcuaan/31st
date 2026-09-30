@@ -1789,9 +1789,17 @@ You have no dark secret. Your role is deliberately about **making other peopleâ€
 
 ### Timeline Check
 
-Once tonight, choose **two established timed events** already in play. Give them to the GM. You receive one answer: **same person could realistically have done both**, **timing creates a meaningful conflict**, or **records are not precise enough to decide**.
+Once tonight, choose **one person** and **one established timed event** already in play.
 
-This power does not identify the killer for you.
+Ask the GM whether, based on the records currently available, that person could realistically have been responsible for or involved in that event.
+
+You receive one answer:
+
+- **timeline supports the possibility**
+- **timing creates a meaningful conflict**
+- **records are not precise enough to decide**
+
+This power tests whether a theory fits the known timeline. It does **not** reveal where someone was, prove that they carried out the event, or identify the killer for you.
 
 ## Starting items
 
