@@ -45,10 +45,22 @@ You knowingly pushed aggressive interpretations, optimistic numbers and exceptio
 
 ## Your power
 
-### Executive Authority
+### Executive Briefing
 
-Once tonight, give the GM one currently released CORPORATE evidence item. You receive a private plain-English note explaining the senior approval/executive context behind it. You may trade or reveal that result.
+Once tonight, choose **one company decision, project or official Vantage document already in play**.
 
+Ask the GM **one** of these questions:
+
+- **Who was pushing this?**
+- **Who was trying to stop it?**
+- **What was Julian planning to do next?**
+- **Who had the most to lose if this went ahead?**
+
+The GM gives you the prepared factual answer based on the records currently available.
+
+You may keep, trade or reveal what you learn.
+
+This power cannot reveal unreleased murder evidence or identify the killer for you.
 ## Starting items
 
 - No private evidence item starts in your pack.
