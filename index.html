@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1232,6 +1233,11 @@
                     {
                         name: "Alec Cation",
                         role: "People & Organisational Strategy"
+                    },
+
+                    {
+                        name: "Connie Fidential",
+                        role: "Founder's Special Projects Fixer"
                     }
 
                 ]
@@ -1302,6 +1308,11 @@
                     {
                         name: "Archie Vist",
                         role: "Records & Archives Coordinator"
+                    },
+
+                    {
+                        name: "Amy Diligence",
+                        role: "Independent Helix Reviewer"
                     }
 
                 ]
@@ -1377,6 +1388,11 @@
                     {
                         name: "Sally Short",
                         role: "Activist Short-Seller & Investigator"
+                    },
+
+                    {
+                        name: "Sarnie Sandwich",
+                        role: "Event Hospitality & Catering"
                     }
 
                 ]
@@ -1417,7 +1433,10 @@
             "Arby Trage": "raven",
             "Lucy Leaks": "dolphin",
             "Gus Sip": "wren",
-            "Sally Short": "sunset"
+            "Sally Short": "sunset",
+            "Sarnie Sandwich": "hazel",
+            "Amy Diligence": "cobalt",
+            "Connie Fidential": "orchid"
         };
 
 
@@ -1800,11 +1819,11 @@
                 if (
                     Object.keys(
                         characterDataMap
-                    ).length !== 27
+                    ).length !== 30
                 ) {
 
                     console.warn(
-                        "Expected 27 character profiles but parsed:",
+                        "Expected 30 character profiles but parsed:",
                         Object.keys(
                             characterDataMap
                         ).length
@@ -2368,7 +2387,7 @@
 
 
             /*
-             * Then load all 27 final character sheets.
+             * Then load all 30 final character sheets.
              */
 
             await loadCharacterData();
