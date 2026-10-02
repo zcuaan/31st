@@ -1,6 +1,6 @@
 # Vantage House — Character Reference
 
-**Status:** FINAL REFERENCE COPY — normalized from the frozen player sheets and QA-checked against V3.3.
+**Status:** WORKING UPDATED COPY — based on the frozen player sheets, with approved post-freeze character changes and additional player roles incorporated.
 
 `<mark>` highlights are deliberately sparse: they flag facts a player should not miss when glancing at the sheet mid-game.
 
@@ -266,7 +266,7 @@ Once tonight, choose one private/portable evidence item currently in your posses
 
 ## Starting items
 
-- **OBJ-001 — Julian USB `JV-01`.** You stole it from Julian’s office. It contains three files about Vantage wrongdoing and monitoring of your own investigation.
+- No private evidence item starts in your pack. **OBJ-001 — Julian USB `JV-01` is staged in the Founder Office, not in your envelope.** During the live gala, you steal it from Julian’s office after finding him collapsed.
 
 ## Start here
 
@@ -1343,7 +1343,7 @@ You have no murder secret. <mark>At about 16:59 you were with Cole Control and H
 - You hold **2 indivisible votes**.
 - At about **16:59** Cole and Hugh were with you in the Board Lounge.
 - You expect the next CEO to make a concrete governance/stewardship commitment, not merely flatter you.
-- Your historical knowledge can give context to governance evidence.
+- Your two-vote bloc gives you leverage to demand concrete commitments from candidates.
 
 ## Objectives
 
@@ -1878,3 +1878,287 @@ This power tests whether a theory fits the known timeline. It does **not** revea
 ## Final word
 
 Give the room the timeline fact or record mismatch you think everybody should have noticed sooner.
+
+---
+
+# 28 — Sarnie Sandwich
+
+**Player:** Sahani  
+**Event Hospitality & Catering**  
+Warm · Observant · Extremely underpaid
+
+You run the practical side of Vantage events: drinks, food, rooms, last-minute disasters and executives who assume you are not listening.
+
+**Cash:** £0  
+**Votes:** 0  
+**CEO eligible:** No
+
+---
+
+## Tonight
+
+Everyone treats hospitality staff like furniture. Tonight, use what you noticed to build a **£500,000 walk-away fund**, quit Vantage for good and work out which of the strange things you saw actually mattered.
+
+## Your position
+
+You have spent the evening fixing drinks, finding missing things, moving between rooms and dealing with people who barely notice you are there.
+
+That has one major advantage: **people do very strange things when they think the person beside them does not matter.**
+
+You were already sick of Vantage before tonight. Julian dying has made one thing very clear: you are not staying here.
+
+Unfortunately, quitting is expensive.
+
+Fortunately, you know things.
+
+## What you personally witnessed
+
+### Polly and the champagne
+
+Before Julian became unwell, you noticed **Polly behaving strangely around Julian’s champagne**. You did not actually see what Polly did.
+
+### Julian afterwards
+
+After drinking, Julian seemed **distracted and unsteady**.
+
+### Sally leaving
+
+Later, you saw **Sally coming from the Founder Office/private-area direction looking panicked**.
+
+The kitchen microwave showed approximately **17:18**.
+
+You know the microwave runs about **2 minutes slow**, so this was approximately **17:20 Vantage Network Time**.
+
+### Something happened afterwards
+
+A few minutes later, you heard **unmistakable movement/noise from Julian’s office**.
+
+The kitchen microwave showed approximately **17:21**.
+
+Because it is two minutes slow, this was approximately **17:23 Vantage Network Time**.
+
+<mark>You are certain this happened after you had already seen Sally leaving.</mark>
+
+**Important:** these four witness observations are true. You may withhold them, sell them or choose when to reveal them, but if you describe what you personally saw or heard, do not deliberately change the factual details.
+
+## Objectives
+
+1. Build a **£500,000 QUIT VANTAGE FUND**.
+2. Get paid by at least **two different people** for information, silence or gossip.
+3. Work out what really happened to Julian.
+4. Before the end of the night, decide whether there is **one thing you will reveal even if nobody pays you**.
+
+## Your power
+
+### Keep It Quiet ×3
+
+Three times tonight, choose another player and tell them **one true thing you genuinely know about them**.
+
+You may demand up to **£200,000** to keep that information quiet.
+
+They may pay, refuse or negotiate.
+
+If you accept payment, you must personally keep that specific information secret for the next **30 minutes**.
+
+You cannot invent evidence or blackmail somebody with something you do not genuinely know.
+
+**Official evidence can still reveal the same information independently.**
+
+## Starting items
+
+- No evidence card starts in your pack.
+- You start with **£0**. Everything you make tonight is your walk-away fund.
+
+## Start here
+
+- **Polly Tician — Government Affairs / Lobbying** — You saw Polly behaving strangely around Julian’s champagne. Decide whether that information is worth more spoken or silent.
+- **Sally Short — Activist Short-Seller & Investigator** — You saw Sally coming from the private area looking panicked. Sally may have a very strong reason to care what you remember.
+- **Perry Spin — Crisis Communications / Public Affairs** — Ask which rumours would be most damaging if they became public.
+- **Lucy Leaks — Corporate Intelligence Adviser / Gus Sip — Executive Reputation Broker** — They deal in information too. Find out what everybody else is hiding.
+
+## Other people to know
+
+- **Archie Vist — Records & Archives Coordinator / Finn Dings — Special Investigations Adviser** — Your timing memories could become very important to the murder investigation.
+- **Cass Flow — Hedge Fund Investor / Vince Ture — Crypto Founder / Arby Trage — Special Situations Investor** — People with money sometimes pay more for information than the people the information is actually about.
+
+## Live beats — read before guests arrive
+
+- **Early gala / drinks:** be in a position to notice Polly behaving unusually around Julian’s champagne. You do **not** see exactly what Polly does.
+- **After Julian drinks:** notice that Julian becomes distracted/unsteady. Do not make a big announcement.
+- **During normal hospitality, before Puzzle 3 Stage B:** casually say once: **“Sorry, I’m late — that microwave clock’s two minutes slow again. I keep looking at the wrong bloody one.”** Do not present it like a clue.
+- **About 17:20 true time / microwave about 17:18:** notice Sally coming from the Founder Office/private-area direction looking panicked.
+- **About 17:23 true time / microwave about 17:21:** hear unmistakable movement/noise from Julian’s office. Remember that Sally had already left.
+- **After the murder opens:** you are free to gossip, sell, withhold and blackmail using what you genuinely know. Do not automatically announce all four observations.
+- **Throughout the game:** listen for new secrets. Anything another player genuinely tells you can become future leverage.
+
+## Final word
+
+Tell the room how much money is in your **QUIT VANTAGE FUND**, whether you are actually resigning, and the one thing you decided was too important to keep quiet.
+
+---
+
+# 29 — Amy Diligence
+
+**Player:** Amy  
+**Independent Helix Reviewer**  
+Friendly · Curious · Good with people
+
+You were asked to independently look at the Helix paperwork because people were worried that something had changed.
+
+**Cash:** £0  
+**Votes:** 0  
+**CEO eligible:** No
+
+---
+
+## Tonight
+
+You found something wrong in the Helix paperwork. **Talk to the people involved, work out who is telling you the truth and help solve Julian’s murder.**
+
+## Your position
+
+You compared an earlier and later version of the Helix paperwork.
+
+Something was definitely wrong.
+
+You arrive late, after Julian has already died and after everybody else has started forming theories.
+
+Do not worry about catching up on everything. Your job is simple:
+
+**talk to people and ask them to explain themselves.**
+
+## What you found
+
+- Two versions of the Helix paperwork contain **important differences**.
+- These are **not just spelling changes or normal edits**.
+- Some of the changes make the situation look **better than the earlier information suggested**.
+- The changes look **deliberate**, not accidental.
+- Julian knew there was a serious problem and was planning to do something about it.
+- Senior people at Vantage were involved somewhere in the process.
+- <mark>You do not know who killed Julian, and you do not know exactly who made every change.</mark>
+
+## Objectives
+
+1. Talk to the people involved in Helix and hear their explanations.
+2. Work out **whose story you trust least**.
+3. Help solve Julian’s murder.
+
+## Your power
+
+### Reality Check
+
+Once tonight, after another player tells you something about **Helix, Vantage’s reporting or Julian’s planned intervention**, bring their claim to the GM.
+
+The GM tells you one of three things:
+
+- **MATCHES WHAT YOU FOUND**
+- **CLASHES WITH WHAT YOU FOUND**
+- **YOU CAN’T TELL**
+
+You decide what to do with the answer.
+
+This power cannot reveal unreleased murder evidence or identify the killer for you.
+
+## Starting items
+
+- **HEL-002 — Independent Helix Review.** Your specialist conclusion about the changed Helix paperwork. It confirms that the differences are important and appear deliberate, but it does not identify the killer or one sole person responsible.
+
+## Start here
+
+- **Drew Diligence — Helix Due-Diligence Associate** — Ask to see the two versions Drew found and hear what first worried him.
+- **Max Ledger — Group Strategy Director** — Ask why Vantage was presenting the business so confidently if the underlying paperwork was changing.
+- **Vera Iance — Risk Modelling / Audie Trail — Internal Audit** — Ask whether either of them had already warned senior people that something was wrong.
+- **Clara Clause — M&A Lawyer** — Ask what Julian was actually planning to do about Helix.
+
+## Other people to know
+
+- **Finn Dings — Special Investigations Adviser** — Can help connect a bad explanation to the wider murder investigation.
+- **Reese Search — Junior Research Analyst** — Has a separate public-record route into the same wider problem.
+- **Cole Control — Chair of Audit & Risk** — Senior approvals and controls may matter to what you found.
+
+## Final word
+
+Tell the room **whose explanation made the least sense to you**, and the one Helix fact you think everybody should remember when deciding what actually happened to Julian.
+
+---
+
+# 30 — Connie Fidential
+
+**Player:** Sara  
+**Founder’s Special Projects Fixer**  
+Charming · Secretive · Comfortable lying
+
+Julian used you for awkward jobs he wanted handled quietly and without a long email chain.
+
+**Cash:** £0  
+**Votes:** 0  
+**CEO eligible:** No
+
+---
+
+## Tonight
+
+You arrive late carrying one of Julian’s last private instructions: **get Opal Ration into the CEO race and, if you can, get her elected.** Nobody else needs to know that instruction came from Julian.
+
+## Your position
+
+Before the gala, Julian sent you away from Vantage House on a private errand. That is why you were not here when he died.
+
+You return at about **18:45** to find Julian dead, the room full of theories and the succession fight already beginning.
+
+You were one of the people Julian used when he wanted something done quietly: private introductions, awkward messages, loyalty tests and jobs that were easier without official paperwork.
+
+Just before you left, Julian gave you one particularly strange instruction:
+
+> **“If anything happens to me, get Opal Ration into the race. She understands how this place actually works.”**
+
+He did not explain why.
+
+## What you know
+
+- Julian personally wanted **Opal Ration** considered as his successor.
+- You do **not** know why he felt so strongly about her.
+- You do not know what Opal did during the blackout unless you discover it during the game.
+- You can reveal Julian’s instruction if you think it helps, but keeping it secret gives you more room to manipulate people.
+- <mark>Julian’s instruction is about succession. It is not proof that Opal is innocent, guilty or connected to his death.</mark>
+
+## Objectives
+
+1. Get **Opal formally nominated** for Interim CEO.
+2. Secretly help Opal gather enough support to win if you can.
+3. Choose **one player you think is hiding something important**. Convince them that Julian told you something about them before he died, and see what they reveal.
+4. By the end of the night, decide whether you still believe carrying out Julian’s last wish is a good idea.
+
+## Your power
+
+### Anonymous Tip ×2
+
+Twice tonight, write a private message of up to **25 words** to another player and give it to the GM.
+
+The GM delivers it without saying who sent it.
+
+You may use the message to ask a question, make an offer, threaten somebody or spread a rumour.
+
+You may **not** claim that fake official evidence exists.
+
+## Starting items
+
+- No private evidence item starts in your pack.
+- **2 × Anonymous Tip slips.**
+
+## Start here
+
+- **Opal Ration — Operations & Special Projects** — Julian wanted Opal in the CEO race. Work out whether Opal even wants the job before deciding how much of Julian’s instruction to reveal.
+- **Hugh Stake — Cornerstone Investor** — His three votes can transform Opal from an unlikely candidate into a serious one.
+- **Penny Sterling — Legacy Shareholder** — Her two votes could complete a majority with Hugh’s bloc, but she will want a real reason to support Opal.
+- **Alec Cation — People & Organisational Strategy** — Find out what promise would make Opal look like a credible leader rather than just an operations candidate.
+
+## Other people to know
+
+- **Lucy Leaks — Corporate Intelligence Adviser / Gus Sip — Executive Reputation Broker** — Useful sources of candidate dirt and rumours.
+- **Perry Spin — Crisis Communications / Public Affairs** — Can help make a weak campaign look much stronger than it is.
+- **Finn Dings — Special Investigations Adviser** — Dangerous if your invented story about what Julian supposedly said creates a contradiction with real evidence.
+
+## Final word
+
+Reveal whether you fulfilled Julian’s last instruction, whether you still think he was right about Opal, and the best lie you told in order to make it happen.
